@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>皮肤管理 - Tgideas 模块化化系统</title>
+	<link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="../css/bootstrap/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="../css/system.css">
+</head>
+<body>
+	<!-- navbar -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">布局化系统</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="#">首页</a></li>
+					<li><a href="#list">专题列表</a></li>
+					<li><a href="#user">个人中心</a></li>
+					<li class="active"><a href="#manage">系统管理</a></li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li><button type="button" class="btn btn-warning navbar-btn">新建专题</button></li>
+					<!-- 未登录时显示 -->
+					<!--<li><a href="#">请先登录</a></li>-->
+					<!-- 登录后显示 -->
+					
+					<li role="presentation" class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							欢迎你，sonichuang<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="">个人中心</a></li>
+							<li><a href="">菜单项一</a></li>
+							<li><a href="">菜单项二</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="">退出</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</nav><!--/.navbar -->
+	
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3 col-md-2 sidebar">
+				<ul class="nav nav-sidebar">
+					<li><a href="sm-module.html">模块管理</a></li>
+					<li><a href="sm-layout.html">布局管理</a></li>
+					<li class="active"><a href="sm-skin.html">皮肤管理</a></li>
+					<li><a href="sm-size.html">尺寸管理</a></li>
+					<li><a href="sm-tag.html">标签管理</a></li>
+				</ul>
+			</div><!--/.sidebar -->
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+				
+				<div class="row">
+						<form class="form-horizontal">
+							<div class="form-group">
+								<label for="moduleName" class="col-sm-1 control-label">皮肤名称</label>
+								<div class="col-sm-4">
+									<input type="email" class="form-control" id="moduleName" placeholder="皮肤名称">
+								</div>
+								<label for="moduleCategory" class="col-sm-1 control-label">皮肤分类</label>
+								<div class="col-sm-4">
+									<select id="modulecategoryCategory" name="" class="form-control">
+										<option value="" selected="selected">请选择皮肤分类</option>
+										<option value="">XX色系</option>
+										<option value="">XX色系</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="modulePic" class="col-sm-1 control-label">皮肤图片</label>
+								<div class="col-sm-4">
+									<input type="file" class="form-control" id="modulePic" placeholder="jane.doe@example.com">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="moduleTag" class="col-sm-1 control-label">皮肤标签</label>
+								<div class="col-sm-6">
+									<label class="checkbox-inline"><input type="checkbox" id="moduleTag1" value="option1"> 微官网</label>
+									<label class="checkbox-inline"><input type="checkbox" id="moduleTag2" value="option2"> 双端官网</label>
+									<label class="checkbox-inline"><input type="checkbox" id="moduleTag3" value="option3"> 运营专题</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="moduleHTML" class="col-sm-1 control-label">HTML</label>
+								<div class="col-sm-9">
+									<textarea id="moduleHTML" rows="4" cols="20" class="form-control"></textarea>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="moduleCSS" class="col-sm-1 control-label">CSS</label>
+								<div class="col-sm-9">
+									<textarea id="moduleCSS" rows="4" cols="20" class="form-control"></textarea>
+								</div>
+							</div>
+							<div class="form-group">
+    							<div class="col-sm-offset-1 col-sm-10">
+								<button type="submit" class="btn btn-lg btn-success">新增皮肤</button>
+								</div>
+							</div>
+						</form>	
+				</div>
+
+			</div><!--/.main -->
+		</div><!--/.row -->
+	</div><!--/.container-fluid -->
+
+
+
+
+
+	<script src="http://game.gtimg.cn/images/js/jquery/jquery-1.9.1.min.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+</body>
+</html>
