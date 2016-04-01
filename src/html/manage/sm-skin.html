@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>布局管理 - Tgideas 模块化系统</title>
-	<link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
-	<link rel="stylesheet" href="../css/bootstrap/bootstrap-theme.min.css">
-	<link rel="stylesheet" href="../css/system.css">
+	<title>皮肤管理 - Tgideas 模块化系统</title>
+	<link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/bootstrap/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="/css/system.css">
 </head>
 <body>
 	<!-- navbar -->
@@ -22,29 +22,30 @@
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="#">首页</a></li>
-					<li><a href="#list">专题列表</a></li>
-					<li><a href="#user">个人中心</a></li>
-					<li class="active"><a href="#manage">系统管理</a></li>
+					<li><a href="/html/">首页</a></li>
+					<li><a href="/html/list/">专题列表</a></li>
+					<li><a href="/html/user">个人中心</a></li>
+					<li class="active"><a href="/html/manage">系统管理</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
-					<li><button type="button" class="btn btn-warning navbar-btn">新建专题</button></li>
+					<li><button type="button" class="btn btn-warning navbar-btn" onclick="window.location.href='/html/create/new-init.html'">新建专题</button></li>
 					<!-- 未登录时显示 -->
-					<li><a href="#">请先登录</a></li>
+					<!--<li><a href="#">请先登录</a></li>-->
 					<!-- 登录后显示 -->
-					<!--
+					
 					<li role="presentation" class="dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
 							欢迎你，sonichuang<span class="caret"></span>
 						</a>
 						<ul class="dropdown-menu">
-							<li><a href="">个人设置</a></li>
 							<li><a href="">个人中心</a></li>
+							<li><a href="">菜单项一</a></li>
+							<li><a href="">菜单项二</a></li>
 							<li role="separator" class="divider"></li>
 							<li><a href="">退出</a></li>
 						</ul>
-					</li>-->
+					</li>
 				</ul>
 			</div><!--/.nav-collapse -->
 		</div>
@@ -55,8 +56,8 @@
 			<div class="col-sm-3 col-md-2 sidebar">
 				<ul class="nav nav-sidebar">
 					<li><a href="sm-module.html">模块管理</a></li>
-					<li class="active"><a href="sm-layout.html">布局管理</a></li>
-					<li><a href="sm-skin.html">皮肤管理</a></li>
+					<li><a href="sm-layout.html">布局管理</a></li>
+					<li class="active"><a href="sm-skin.html">皮肤管理</a></li>
 					<li><a href="sm-size.html">尺寸管理</a></li>
 					<li><a href="sm-tag.html">标签管理</a></li>
 				</ul>
@@ -66,27 +67,27 @@
 				<nav class="navbar navbar-default">
 					<div id="subNavbar" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
-							<li class="active"><a href="#">全部布局</a></li>
-							<li><a href="#">竖版布局</a></li>
-							<li><a href="#">横版布局</a></li>
-							<li><a href="#">响应式布局</a></li>
+							<li class="active"><a href="#">全部皮肤</a></li>
+							<li><a href="#">黄色系</a></li>
+							<li><a href="#">黄色系</a></li>
+							<li><a href="#">黄色系</a></li>
 						</ul>
 						<div class="collapse navbar-collapse">
 							<ul class="nav navbar-nav navbar-right">
-								<li><button type="button" class="btn btn-default navbar-btn" onclick="window.location.href='sm-layout-add.html'">新增布局</button></li>
+								<li><button type="button" class="btn btn-default navbar-btn" onclick="window.location.href='sm-skin-add.html'">新增皮肤</button></li>
 							</ul>
 						</div>
 					</div><!--/.nav-collapse -->
 				</nav><!--/.nav-->
 				
-				<!-- row(全部布局展示列表) -->
+				<!-- row(全部皮肤展示列表) -->
 				<div class="row">
 					<div class="col-md-6 col-md-2">
 						<div class="thumbnail">
 							<img src="http://dummyimage.com/200x150/222/fff.png&text=%3Cimg%3E" alt="...">
 							<div class="caption">
-								<h3>布局名称</h3>
-								<p>布局介绍...</p>
+								<h3>皮肤名称</h3>
+								<p>皮肤介绍...</p>
 								<p><a href="#" class="btn btn-primary" role="编辑">编辑</a> <a href="#" class="btn btn-danger" role="删除">删除</a></p>
 							</div>
 						</div>
@@ -95,8 +96,8 @@
 						<div class="thumbnail">
 							<img src="http://dummyimage.com/200x150/222/fff.png&text=%3Cimg%3E" alt="...">
 							<div class="caption">
-								<h3>布局名称</h3>
-								<p>布局介绍...</p>
+								<h3>皮肤名称</h3>
+								<p>皮肤介绍...</p>
 								<p><a href="#" class="btn btn-primary" role="编辑">编辑</a> <a href="#" class="btn btn-danger" role="删除">删除</a></p>
 							</div>
 						</div>
@@ -105,8 +106,8 @@
 						<div class="thumbnail">
 							<img src="http://dummyimage.com/200x150/222/fff.png&text=%3Cimg%3E" alt="...">
 							<div class="caption">
-								<h3>布局名称</h3>
-								<p>布局介绍...</p>
+								<h3>皮肤名称</h3>
+								<p>皮肤介绍...</p>
 								<p><a href="#" class="btn btn-primary" role="编辑">编辑</a> <a href="#" class="btn btn-danger" role="删除">删除</a></p>
 							</div>
 						</div>
@@ -115,8 +116,8 @@
 						<div class="thumbnail">
 							<img src="http://dummyimage.com/200x150/222/fff.png&text=%3Cimg%3E" alt="...">
 							<div class="caption">
-								<h3>布局名称</h3>
-								<p>布局介绍...</p>
+								<h3>皮肤名称</h3>
+								<p>皮肤介绍...</p>
 								<p><a href="#" class="btn btn-primary" role="编辑">编辑</a> <a href="#" class="btn btn-danger" role="删除">删除</a></p>
 							</div>
 						</div>
@@ -125,8 +126,8 @@
 						<div class="thumbnail">
 							<img src="http://dummyimage.com/200x150/222/fff.png&text=%3Cimg%3E" alt="...">
 							<div class="caption">
-								<h3>布局名称</h3>
-								<p>布局介绍...</p>
+								<h3>皮肤名称</h3>
+								<p>皮肤介绍...</p>
 								<p><a href="#" class="btn btn-primary" role="编辑">编辑</a> <a href="#" class="btn btn-danger" role="删除">删除</a></p>
 							</div>
 						</div>
@@ -135,8 +136,8 @@
 						<div class="thumbnail">
 							<img src="http://dummyimage.com/200x150/222/fff.png&text=%3Cimg%3E" alt="...">
 							<div class="caption">
-								<h3>布局名称</h3>
-								<p>布局介绍...</p>
+								<h3>皮肤名称</h3>
+								<p>皮肤介绍...</p>
 								<p><a href="#" class="btn btn-primary" role="编辑">编辑</a> <a href="#" class="btn btn-danger" role="删除">删除</a></p>
 							</div>
 						</div>
@@ -145,8 +146,8 @@
 						<div class="thumbnail">
 							<img src="http://dummyimage.com/200x150/222/fff.png&text=%3Cimg%3E" alt="...">
 							<div class="caption">
-								<h3>布局名称</h3>
-								<p>布局介绍...</p>
+								<h3>皮肤名称</h3>
+								<p>皮肤介绍...</p>
 								<p><a href="#" class="btn btn-primary" role="编辑">编辑</a> <a href="#" class="btn btn-danger" role="删除">删除</a></p>
 							</div>
 						</div>
@@ -155,13 +156,13 @@
 						<div class="thumbnail">
 							<img src="http://dummyimage.com/200x150/222/fff.png&text=%3Cimg%3E" alt="...">
 							<div class="caption">
-								<h3>布局名称</h3>
-								<p>布局介绍...</p>
+								<h3>皮肤名称</h3>
+								<p>皮肤介绍...</p>
 								<p><a href="#" class="btn btn-primary" role="编辑">编辑</a> <a href="#" class="btn btn-danger" role="删除">删除</a></p>
 							</div>
 						</div>
 					</div>
-				</div><!--/.row(全部布局展示列表) -->
+				</div><!--/.row(全部皮肤展示列表) -->
 				
 				<!-- pagination -->
 				<!--
@@ -187,6 +188,6 @@
 
 
 	<script src="http://game.gtimg.cn/images/js/jquery/jquery-1.9.1.min.js"></script>
-	<script src="../js/bootstrap.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
 </body>
 </html>

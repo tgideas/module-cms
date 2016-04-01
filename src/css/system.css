@@ -61,16 +61,22 @@ body {
 }
 .nav-sidebar > .active > a,
 .nav-sidebar > .active > a:hover,
-.nav-sidebar > .active > a:focus {
+.nav-sidebar > .active > a:focus{
   color: #fff;
   background-color: #428bca;
 }
-
+.nav-sidebar-sub{display: none;background-color: #fff;margin:10px 0 10px 20px;border-radius:0.5em;}
+.active .nav-sidebar-sub{display: block;}
+.nav-sidebar-sub > .active > a,
+.nav-sidebar-sub > .active > a:hover,
+.nav-sidebar-sub > .active > a:focus{
+    color: #111;
+    background-color: #ddd;
+}
 
 /*
  * Main content
  */
-
 .main {
   padding: 20px;
 }
@@ -103,3 +109,18 @@ body {
   display: inline-block;
   border-radius: 50%;
 }
+
+
+/* new
+---------------------------------- */
+.page-preview-box{width:491px;padding:107px 58px 150px 58px;margin-right:40px;background:url(/images/iphone6-mockup.png);}
+.page-base-info{margin:10px 0 0 10px;padding:20px;background-color: #fdfdfd;border:1px solid #eee;border-radius:3px;border-left:5px solid #5bc0de;}
+
+
+
+
+
+
+
+
+

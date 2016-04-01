@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>创建专题 - Tgideas 模块化系统</title>
+	<link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/bootstrap/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="/css/system.css">
+</head>
+<body>
+	<!-- navbar -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">模块化系统</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="/html/">首页</a></li>
+					<li><a href="/html/list/">专题列表</a></li>
+					<li><a href="/html/user">个人中心</a></li>
+					<li><a href="/html/manage">系统管理</a></li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li><button type="button" class="btn btn-warning navbar-btn" onclick="window.location.href='/html/create/new-init.html'">新建专题</button></li>
+					<!-- 未登录时显示 -->
+					<!--<li><a href="#">请先登录</a></li>-->
+					<!-- 登录后显示 -->
+					
+					<li role="presentation" class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							欢迎你，sonichuang<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="">个人中心</a></li>
+							<li><a href="">菜单项一</a></li>
+							<li><a href="">菜单项二</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="">退出</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</nav><!--/.navbar -->
+	
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3 col-md-2 sidebar">
+				<ul class="nav nav-sidebar">
+					<li><a href="new-init.html">专题属性</a></li>
+					<li class="active">
+						<a href="new-pages.html">页面管理</a>
+						<ul class="nav nav-sidebar-sub">
+							<li class="active" role="presentation" class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+									专题首页 <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="#">专题首页</a></li>
+									<li><a href="#">活动说明页</a></li>
+									<li><a href="#">活动奖品页</a></li>
+									<li><a href="#">中奖公示页</a></li>
+								</ul>
+								<!-- <div class="btn-group">
+								  <button type="button" class="btn btn-default">专题首页</button>
+								  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								    <span class="caret"></span>
+								    <span class="sr-only">Toggle Dropdown</span>
+								  </button>
+								  <ul class="dropdown-menu">
+								    <li><a href="#">活动说明页</a></li>
+								    <li><a href="#">活动奖品页</a></li>
+								    <li><a href="#">中奖公示页</a></li>
+								  </ul>
+								</div> -->
+							</li>
+							<li><a href="new-layout.html">布局选择</a></li>
+							<li><a href="new-frame.html">框架定制</a></li>
+							<li><a href="new-module.html">模块配置</a></li>
+							<li><a href="new-page.html">页面配置</a></li>
+							<li><a href="new-page.html">预览提交</a></li>
+							<li><a href="new-page.html">活动说明页</a></li>
+						</ul>
+					</li>
+					<li><a href="new-preview.html">预览发布</a></li>
+				</ul>
+			</div><!--/.sidebar -->
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">				
+				<ol class="breadcrumb">
+					<li><a href="#">XXX专题</a></li>
+					<li>页面管理</li>
+				</ol>
+
+				<!-- row(页面选择) -->
+				<div class="row">
+					<div class="col-md-6 col-md-2">
+						<div class="thumbnail">
+							<img src="http://dummyimage.com/200x200/5bc0de/fff.png&text=%3Cimg%3E" alt="...">
+							<div class="caption">
+								<h4>专题首页</h4>
+								<p><a href="#">编辑</a> | <a href="#">预览</a> | <a href="javascript:BootstrapDialog.show(dialogSet);">版本</a> | <a href="#">删除</a></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-md-2">
+						<div class="thumbnail">
+							<img src="http://dummyimage.com/200x200/5bc0de/fff.png&text=%3Cimg%3E" alt="...">
+							<div class="caption">
+								<h4>活动说明页</h4>
+								<p><a href="#">编辑</a> | <a href="#">预览</a> | <a href="javascript:BootstrapDialog.show(dialogSet);">版本</a> | <a href="#">删除</a></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 col-md-2">
+						<div class="thumbnail">
+							<img src="http://dummyimage.com/200x200/428bca/fff.png&text=0x2B" alt="...">
+							
+						</div>
+					</div>
+				</div><!--/.row(页面选择) -->
+
+				<!-- row(页面基础配置) -->
+				<div class="row">
+					<div class="col-sm-10 page-base-info">
+						<form class="form-horizontal">
+							<div class="form-group">
+								<label for="moduleName" class="col-sm-1 control-label">专题名称</label>
+								<div class="col-sm-3">
+									<input type="email" class="form-control" id="moduleName" placeholder="专题名称">
+								</div>
+								<label for="moduleName" class="col-sm-1 control-label">文件名称</label>
+								<div class="col-sm-3">
+									<input type="email" class="form-control" id="moduleName" placeholder="专题名称">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-1 control-label">处理人</label>
+								<div class="col-sm-3">
+									<label class="radio-inline"><input type="radio" name="treatmentType[]" id="treatmentType1" value="内部跟进"> 内部跟进</label>
+									<label class="radio-inline"><input type="radio" name="treatmentType[]" id="treatmentType2" value="外包跟进"> 外包跟进</label>
+								</div>
+								<label class="col-sm-1 control-label">功能选择</label>
+								<div class="col-sm-3">
+									<label class="radio-inline"><input type="radio" name="function[]" id="function1" value="内部跟进"> 不带功能</label>
+									<label class="radio-inline"><input type="radio" name="function[]" id="function2" value="外包跟进"> 带功能</label>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-sm-1 control-label">模板选择</label>
+								<div class="col-sm-3">
+									<label class="radio-inline"><input type="radio" name="templateSelect[]" id="templateSelect1" value="全新配置"> 全新配置</label>
+									<label class="radio-inline"><input type="radio" name="templateSelect[]" id="templateSelect2" value="基于模板"> 基于模板</label>
+								</div>
+							</div>
+							<div id="" class="form-group" style="display:block">
+								<div class="col-sm-offset-1">
+									<div class="col-md-6 col-md-2 ">
+										<div class="thumbnail">
+											<img src="http://dummyimage.com/200x150/222/fff.png&text=%3Cimg%3E" alt="...">
+											<div class="caption">
+												<h4 class="text-center">模板名称1</h4>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6 col-md-2 ">
+										<div class="thumbnail">
+											<img src="http://dummyimage.com/200x150/222/fff.png&text=%3Cimg%3E" alt="...">
+											<div class="caption">
+												<h4 class="text-center">模板名称2</h4>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-md-10 text-center">
+									<button type="submit" class="btn btn-success">确定</button>
+									<button type="reset" class="btn btn-default">取消</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div><!--/.row(页面基础配置) -->
+				
+				<!-- 弹层：版本管理 -->
+				<button type="button" onclick="BootstrapDialog.show(dialogSet);" class="btn btn-danger">查看弹层『历史版本』</button>
+
+
+			</div><!--/.main -->
+		</div><!--/.row -->
+	</div><!--/.container-fluid -->
+	<script src="http://game.gtimg.cn/images/js/jquery/jquery-1.9.1.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+
+	<!-- 
+		* bootstrap-dilog
+		* docs: https://nakupanda.github.io/bootstrap3-dialog/
+	-->
+	<link rel="stylesheet" href="/css/bootstrap/bootstrap-dialog.min.css">
+	<script src="/js/bootstrap-dialog.min.js"></script>
+	<script>
+		var $dialogContent = $('<ul class="list-group"></ul>');
+		    $dialogContent.append('<li class="list-group-item"><span class="pull-right"><a href="">预览</a> | <a href="">回滚</a></span><span>2016-03-30 16:40</span></li>');
+		    $dialogContent.append('<li class="list-group-item"><span class="pull-right"><a href="">预览</a> | <a href="">回滚</a></span><span>2016-03-30 16:40</span></li>');
+		    $dialogContent.append('<li class="list-group-item"><span class="pull-right"><a href="">预览</a> | <a href="">回滚</a></span><span>2016-03-30 16:40</span></li>');
+	   	var dialogSet = {
+	        title: '『专题首页』版本管理',
+	        message: $dialogContent,
+	        buttons: [{
+	            label: '关闭',
+	            action: function(dialogRef){
+	                dialogRef.close();
+	            }
+	        }]
+	    };
+	    // BootstrapDialog.show(dialogSet);
+	</script>
+</body>
+</html>

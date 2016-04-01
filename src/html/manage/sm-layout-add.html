@@ -3,9 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>布局管理 - Tgideas 模块化化系统</title>
-	<link rel="stylesheet" href="../css/bootstrap/bootstrap.min.css">
-	<link rel="stylesheet" href="../css/bootstrap/bootstrap-theme.min.css">
-	<link rel="stylesheet" href="../css/system.css">
+	<link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/bootstrap/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="/css/system.css">
 </head>
 <body>
 	<!-- navbar -->
@@ -18,18 +18,18 @@
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand" href="#">布局化系统</a>
+			<a class="navbar-brand" href="#">模块化系统</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="#">首页</a></li>
-					<li><a href="#list">专题列表</a></li>
-					<li><a href="#user">个人中心</a></li>
-					<li class="active"><a href="#manage">系统管理</a></li>
+					<li><a href="/html/">首页</a></li>
+					<li><a href="/html/list/">专题列表</a></li>
+					<li><a href="/html/user">个人中心</a></li>
+					<li class="active"><a href="/html/manage">系统管理</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
-					<li><button type="button" class="btn btn-warning navbar-btn">新建专题</button></li>
+					<li><button type="button" class="btn btn-warning navbar-btn" onclick="window.location.href='/html/create/new-init.html'">新建专题</button></li>
 					<!-- 未登录时显示 -->
 					<!--<li><a href="#">请先登录</a></li>-->
 					<!-- 登录后显示 -->
@@ -67,13 +67,13 @@
 				<div class="row">
 						<form class="form-horizontal">
 							<div class="form-group">
-								<label for="moduleName" class="col-sm-1 control-label">布局名称</label>
+								<label for="layoutName" class="col-sm-1 control-label">布局名称</label>
 								<div class="col-sm-4">
-									<input type="email" class="form-control" id="moduleName" placeholder="布局名称">
+									<input type="email" class="form-control" id="layoutName" placeholder="布局名称">
 								</div>
-								<label for="moduleCategory" class="col-sm-1 control-label">布局分类</label>
+								<label for="layoutCategory" class="col-sm-1 control-label">布局分类</label>
 								<div class="col-sm-4">
-									<select id="modulecategoryCategory" name="" class="form-control">
+									<select id="layoutcategoryCategory" name="" class="form-control">
 										<option value="" selected="selected">请选择布局分类</option>
 										<option value="">竖版布局</option>
 										<option value="">横版布局</option>
@@ -82,35 +82,49 @@
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="modulePic" class="col-sm-1 control-label">布局图片</label>
+								<label for="layoutPic" class="col-sm-1 control-label">布局图片</label>
 								<div class="col-sm-4">
-									<input type="file" class="form-control" id="modulePic" placeholder="jane.doe@example.com">
+									<input type="file" class="form-control" id="layoutPic" placeholder="jane.doe@example.com">
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="moduleTag" class="col-sm-1 control-label">布局标签</label>
+								<label for="layoutTag" class="col-sm-1 control-label">布局标签</label>
 								<div class="col-sm-6">
-									<label class="checkbox-inline"><input type="checkbox" id="moduleTag1" value="option1"> 微官网</label>
-									<label class="checkbox-inline"><input type="checkbox" id="moduleTag2" value="option2"> 双端官网</label>
-									<label class="checkbox-inline"><input type="checkbox" id="moduleTag3" value="option3"> 运营专题</label>
+									<label class="checkbox-inline"><input type="checkbox" id="layoutTag1" value="option1"> 微官网</label>
+									<label class="checkbox-inline"><input type="checkbox" id="layoutTag2" value="option2"> 双端官网</label>
+									<label class="checkbox-inline"><input type="checkbox" id="layoutTag3" value="option3"> 运营专题</label>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label for="layoutTag" class="col-sm-1 control-label">容器数量</label>
+								<div class="col-sm-2">
+									<input type="text" class="form-control" id="layoutContainer">
+								</div>
+								<div class="col-sm-1">
+									<button type="bottn" class="btn btn-default">确定</button>
+								</div>
+								<div class="col-sm-offset-1 col-sm-9">
+									<textarea id="layoutHTML" rows="4" cols="20" class="form-control" disabled="disabled">填充代码</textarea>
+								</div>
+							</div>
+
+							<div class="form-group">
+								<label for="layoutHTML" class="col-sm-1 control-label">HTML</label>
+								<div class="col-sm-9">
+									<textarea id="layoutHTML" rows="4" cols="20" class="form-control"></textarea>
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="moduleHTML" class="col-sm-1 control-label">HTML</label>
+								<label for="layoutCSS" class="col-sm-1 control-label">CSS</label>
 								<div class="col-sm-9">
-									<textarea id="moduleHTML" rows="4" cols="20" class="form-control"></textarea>
+									<textarea id="layoutCSS" rows="4" cols="20" class="form-control"></textarea>
 								</div>
 							</div>
 							<div class="form-group">
-								<label for="moduleCSS" class="col-sm-1 control-label">CSS</label>
+								<label for="layoutJS" class="col-sm-1 control-label">JS</label>
 								<div class="col-sm-9">
-									<textarea id="moduleCSS" rows="4" cols="20" class="form-control"></textarea>
-								</div>
-							</div>
-							<div class="form-group">
-								<label for="moduleJS" class="col-sm-1 control-label">JS</label>
-								<div class="col-sm-9">
-									<textarea id="moduleJS" rows="4" cols="20" class="form-control"></textarea>
+									<textarea id="layoutJS" rows="4" cols="20" class="form-control"></textarea>
 								</div>
 							</div>
 							<div class="form-group">
@@ -130,6 +144,6 @@
 
 
 	<script src="http://game.gtimg.cn/images/js/jquery/jquery-1.9.1.min.js"></script>
-	<script src="../js/bootstrap.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
 </body>
 </html>
