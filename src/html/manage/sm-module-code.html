@@ -67,6 +67,48 @@
 				<div class="row">
 					<form class="form-horizontal">
 						<div class="form-group">
+							<label for="moduleName" class="col-sm-1 control-label">模块名称</label>
+							<div class="col-sm-4">
+								<input type="email" class="form-control" id="moduleName" placeholder="模块名称">
+							</div>
+							<label for="moduleCategory" class="col-sm-1 control-label">模块分类</label>
+							<div class="col-sm-4">
+								<select id="modulecategoryCategory" name="" class="form-control">
+									<option value="" selected="selected">请选择模块分类</option>
+									<option value="">通用模块</option>
+									<option value="">抽奖模块</option>
+									<option value="">图文模块</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="modulePic" class="col-sm-1 control-label">模块图片</label>
+							<div class="col-sm-4">
+								<input type="file" class="form-control" id="modulePic" placeholder="jane.doe@example.com">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="moduleTag" class="col-sm-1 control-label">模块标签</label>
+							<div class="col-sm-6">
+								<label class="checkbox-inline"><input type="checkbox" id="moduleTag1" value="option1"> 微官网</label>
+								<label class="checkbox-inline"><input type="checkbox" id="moduleTag2" value="option2"> 双端官网</label>
+								<label class="checkbox-inline"><input type="checkbox" id="moduleTag3" value="option3"> 运营专题</label>
+							</div>
+						</div>
+						
+						<!-- 界面、内容、代码 选项卡 -->
+						<ul class="nav nav-tabs">
+							<li role="presentation"><a href="sm-module-add.html">界面定制</a></li>
+							<li role="presentation"><a href="sm-module-config.html">内容配置</a></li>
+							<li role="presentation" class="active"><a href="sm-module-code.html">代码上传</a></li>
+						</ul>
+						
+						<div class="form-group">
+							<div class="col-sm-offset-1 col-sm-9">
+								<textarea id="moduleHTML" rows="4" cols="20" class="form-control" readonly>填充代码</textarea>
+							</div>
+						</div>
+						<div class="form-group">
 							<label for="moduleHTML" class="col-sm-1 control-label">HTML</label>
 							<div class="col-sm-9">
 								<textarea id="moduleHTML" rows="4" cols="20" class="form-control"></textarea>
@@ -95,9 +137,6 @@
 			</div><!--/.main -->
 		</div><!--/.row -->
 	</div><!--/.container-fluid -->
-
-
-
 
 
 	<script src="http://game.gtimg.cn/images/js/jquery/jquery-1.9.1.min.js"></script>

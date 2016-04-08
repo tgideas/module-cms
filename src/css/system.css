@@ -111,7 +111,16 @@ body {
 }
 
 
-/* new
+/* manage
+---------------------------------- */
+.module-drag,.module-config{padding:40px 20px;}
+.module-drag-box,.module-config-box{width: 480px;border: 1px solid #ddd;min-height:560px;background-color: #f9f9f9;margin-right:20px;}
+.module-drag-box .list-group-item,.module-config-box .list-group-item
+{color: #8a6d3b;background-color: #fcf8e3;}
+
+.module-config-box,.module-config-group{max-height:600px;overflow-y:auto;}
+
+/* create
 ---------------------------------- */
 .page-preview-box{width:491px;padding:107px 58px 150px 58px;margin-right:40px;background:url(/images/iphone6-mockup.png);}
 .page-base-info{margin:10px 0 0 10px;padding:20px;background-color: #fdfdfd;border:1px solid #eee;border-radius:3px;border-left:5px solid #5bc0de;}
