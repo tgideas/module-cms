@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模板管理 - Tgideas 模板化系统</title>
+	<link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/bootstrap/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="/css/system.css">
+</head>
+<body>
+	<!-- navbar -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">模板化系统</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="/html/">首页</a></li>
+					<li><a href="/html/list/">专题列表</a></li>
+					<li><a href="/html/user">个人中心</a></li>
+					<li class="active"><a href="/html/manage">系统管理</a></li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li><button type="button" class="btn btn-warning navbar-btn" onclick="window.location.href='/html/create/new-init.html'">新建专题</button></li>
+					<!-- 未登录时显示 -->
+					<!--<li><a href="#">请先登录</a></li>-->
+					<!-- 登录后显示 -->
+					
+					<li role="presentation" class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							欢迎你，sonichuang<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="">个人中心</a></li>
+							<li><a href="">菜单项一</a></li>
+							<li><a href="">菜单项二</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="">退出</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</nav><!--/.navbar -->
+	
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3 col-md-2 sidebar">
+				<ul class="nav nav-sidebar">
+					<li><a href="sm-module.html">模板管理</a></li>
+					<li><a href="sm-layout.html">布局管理</a></li>
+					<li><a href="sm-skin.html">皮肤管理</a></li>
+					<li><a href="sm-size.html">尺寸管理</a></li>
+					<li><a href="sm-tag.html">标签管理</a></li>
+					<li class="active"><a href="sm-template.html">模板管理</a></li>
+				</ul>
+			</div><!--/.sidebar -->
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+				
+				<div class="row">
+					<form class="form-horizontal">
+						<div class="form-group">
+							<label for="templateName" class="col-sm-1 control-label">模板名称</label>
+							<div class="col-sm-4">
+								<input type="email" class="form-control" id="templateName" placeholder="模板名称">
+							</div>
+							<label for="templateCategory" class="col-sm-1 control-label">模板分类</label>
+							<div class="col-sm-4">
+								<select id="templatecategoryCategory" name="" class="form-control">
+									<option value="" selected="selected">请选择模板分类</option>
+									<option value="">通用模板</option>
+									<option value="">抽奖模板</option>
+									<option value="">图文模板</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="templatePic" class="col-sm-1 control-label">模板图片</label>
+							<div class="col-sm-4">
+								<input type="file" class="form-control" id="templatePic" placeholder="jane.doe@example.com">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="templateTag" class="col-sm-1 control-label">模板标签</label>
+							<div class="col-sm-6">
+								<label class="checkbox-inline"><input type="checkbox" id="templateTag1" value="option1"> 微官网</label>
+								<label class="checkbox-inline"><input type="checkbox" id="templateTag2" value="option2"> 双端官网</label>
+								<label class="checkbox-inline"><input type="checkbox" id="templateTag3" value="option3"> 运营专题</label>
+							</div>
+						</div>
+						
+						<!-- 界面、内容、代码 选项卡 -->
+						<ul class="nav nav-tabs">
+							<li role="presentation"><a href="sm-template-add.html">布局选择</a></li>
+							<li role="presentation" class="active"><a href="sm-template-config.html">内容配置</a></li>
+						</ul>
+
+						<!-- row(框架定制表单) -->
+						<div class="row">
+							<div class="col-md-8 page-preview-box">
+								<!-- 框架编辑体 -->
+								<div style="overflow: hidden;overflow-y:auto;width:375px;height:667px;background-color:#f1f1f1">
+									<p class="page-preview-box-tips">从右侧拖拽模块</p>
+									<ul class="list-group list-drag-drop-group interactive-drag-drop-group">
+										<li class="list-group-item">navigation(导航栏模块)</li>
+										<li class="list-group-item">slider(图片轮播模块)</li>
+										<li class="list-group-item">lottery(抽奖模块)</li>
+										<li class="list-group-item">txt-list(文字列表模块)</li>
+
+										<li class="list-group-item">
+											<button type="button" class="close btn-remove-module-object"><span aria-hidden="true">&times;</span></button>
+											<a href="javascript:;" class="text-center">
+												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
+												<label>模块名称</label>
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="col-md-6">
+								<div class="row">
+									<h4>基础模块</h4>
+									<ul class="list-group list-drag-group interactive-drag-group">
+										<li class="list-group-item">
+											<a href="javascript:;" class="thumbnail text-center">
+												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
+												<label>基础1</label>
+											</a>
+										</li>
+										<li class="list-group-item">
+											<a href="javascript:;" class="thumbnail text-center">
+												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
+												<label>基础2</label>
+											</a>
+										</li>
+										<li class="list-group-item">
+											<a href="javascript:;" class="thumbnail text-center">
+												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
+												<label>基础3</label>
+											</a>
+										</li>
+										<li class="list-group-item">
+											<a href="javascript:;" class="thumbnail text-center">
+												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
+												<label>基础4</label>
+											</a>
+										</li>
+										<li class="list-group-item">
+											<a href="javascript:;" class="thumbnail text-center">
+												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
+												<label>基础5</label>
+											</a>
+										</li>
+									</ul>
+								</div>
+
+								<div class="row">
+									<h4>抽奖模块</h4>
+									<ul class="list-group list-drag-group interactive-drag-group">
+										<li class="list-group-item">
+											<a href="javascript:;" class="thumbnail text-center">
+												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
+												<label>抽奖1</label>
+											</a>
+										</li>
+										<li class="list-group-item">
+											<a href="javascript:;" class="thumbnail text-center">
+												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
+												<label>抽奖2</label>
+											</a>
+										</li>
+										<li class="list-group-item">
+											<a href="javascript:;" class="thumbnail text-center">
+												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
+												<label>抽奖3</label>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="row">
+									<h4>图文模块</h4>
+									<ul class="list-group list-drag-group interactive-drag-group">
+										<li class="list-group-item">
+											<a href="javascript:;" class="thumbnail text-center">
+												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
+												<label>图文1</label>
+											</a>
+										</li>
+										<li class="list-group-item">
+											<a href="javascript:;" class="thumbnail text-center">
+												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
+												<label>图文2</label>
+											</a>
+										</li>
+										<li class="list-group-item">
+											<a href="javascript:;" class="thumbnail text-center">
+												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
+												<label>图文3</label>
+											</a>
+										</li>
+										<li class="list-group-item">
+											<a href="javascript:;" class="thumbnail text-center">
+												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
+												<label>图文4</label>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<div class="row">
+									<h4>展示模块</h4>
+									<ul class="list-group list-drag-group interactive-drag-group">
+										<li class="list-group-item">
+											<a href="javascript:;" class="thumbnail text-center">
+												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
+												<label>展示1</label>
+											</a>
+										</li>
+										<li class="list-group-item">
+											<a href="javascript:;" class="thumbnail text-center">
+												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
+												<label>展示2</label>
+											</a>
+										</li>
+										<li class="list-group-item">
+											<a href="javascript:;" class="thumbnail text-center">
+												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
+												<label>展示3</label>
+											</a>
+										</li>
+										<li class="list-group-item">
+											<a href="javascript:;" class="thumbnail text-center">
+												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
+												<label>展示4</label>
+											</a>
+										</li>
+										<li class="list-group-item">
+											<a href="javascript:;" class="thumbnail text-center">
+												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
+												<label>展示5</label>
+											</a>
+										</li>
+									</ul>
+								</div>
+								<!-- <div class="col-md-8 text-center">
+									<button type="button" class="btn btn-lg btn-default">另存为模板</button>
+									<button type="button" class="btn btn-lg btn-success" onclick="window.location.href='new-frame.html'">下一步</button>
+								</div> -->
+							</div>
+
+						</div><!--/.row(框架定制表单) -->
+
+
+
+						<div class="form-group">
+							<div class="col-sm-12 text-center">
+							<button type="button" class="btn btn-lg btn-success" onclick="window.location.href='sm-template-config.html'">存为模板</button>
+							</div>
+						</div>
+					</form>	
+				</div>
+
+			</div><!--/.main -->
+		</div><!--/.row -->
+	</div><!--/.container-fluid -->
+
+
+	<script src="http://game.gtimg.cn/images/js/jquery/jquery-1.9.1.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/jquery-sortable.js"></script>
+	<script>
+		(function(){
+			$("ul.list-drag-drop-group").sortable({
+				group: 'no-drop',
+				handle: 'li.list-group-item',
+				onDragStart: function ($item, container, _super) {
+					// Duplicate items of the no drop area
+					if(!container.options.drop)
+					$item.clone().insertAfter($item);
+					_super($item, container);
+					$item.find("a").removeClass("thumbnail");
+					var closeBtnHTML = '<button type="button" class="close btn-remove-module-object"><span aria-hidden="true">&times;</span></button>';
+					var d = $item.find("button.btn-remove-module-object")[0];
+					if(!d){
+						$item.prepend(closeBtnHTML);
+						console.log("btn prepend")
+					}
+				}
+			});
+			$("ul.list-drag-group").sortable({
+				group: 'no-drop',
+				// handle: 'li.list-group-item',
+				drop: false,
+				onDrag:function(){
+					console.log("drop")
+				}
+			});
+
+			// close func bind
+			$("ul.list-drag-drop-group").on("click","button.close",function(){
+				$(this).parents("li.list-group-item").remove();
+			});
+
+		})()
+	</script>
+
+</body>
+</html>

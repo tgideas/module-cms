@@ -60,6 +60,7 @@
 					<li><a href="sm-skin.html">皮肤管理</a></li>
 					<li><a href="sm-size.html">尺寸管理</a></li>
 					<li><a href="sm-tag.html">标签管理</a></li>
+					<li><a href="sm-template.html">模板管理</a></li>
 				</ul>
 			</div><!--/.sidebar -->
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -106,52 +107,62 @@
 						<div class="form-group module-drag">
 							<div class="col-md-8 module-drag-box">
 								<h3>本模块元素</h3>
-								<ul class="list-group">
+								<ul class="list-group list-drag-drop-group">
 									<li class="list-group-item">
+										<button type="button" class="close btn-remove-module-object"><span aria-hidden="true">&times;</span></button>
 										<h5>样式选择</h6>
-									</li>
-									<li class="list-group-item">
-										<h5>文本输入框</h5>
-									</li>
-									<li class="list-group-item">
-										<h5>时间输入框</h5>
 									</li>
 								</ul>
 							</div>
 							<div class="col-md-6 module-drag-group">
 								<h3>所有可使用模块元素</h3>
-								<ul class="list-group">
+								<ul class="list-group list-drag-group">
 									<li class="list-group-item">
+										<button type="button" class="close btn-remove-module-object"><span aria-hidden="true">&times;</span></button>
 										<h5>样式选择</h6>
 									</li>
 									<li class="list-group-item">
+										<button type="button" class="close btn-remove-module-object"><span aria-hidden="true">&times;</span></button>
 										<h5>文本输入框</h5>
 									</li>
 									<li class="list-group-item">
+										<button type="button" class="close btn-remove-module-object"><span aria-hidden="true">&times;</span></button>
 										<h5>时间输入框</h5>
 									</li>
 									<li class="list-group-item">
+										<button type="button" class="close btn-remove-module-object"><span aria-hidden="true">&times;</span></button>
 										<h5>图片上传</h5>
 									</li>
 									<li class="list-group-item">
+										<button type="button" class="close btn-remove-module-object"><span aria-hidden="true">&times;</span></button>
 										<h5>富文本编辑器</h5>
 									</li>
 									<li class="list-group-item">
+										<button type="button" class="close btn-remove-module-object"><span aria-hidden="true">&times;</span></button>
 										<h5>可选内容</h5>
 									</li>
 									<li class="list-group-item">
+										<button type="button" class="close btn-remove-module-object"><span aria-hidden="true">&times;</span></button>
 										<h5>表格编辑器</h5>
 									</li>
 									<li class="list-group-item">
+										<button type="button" class="close btn-remove-module-object"><span aria-hidden="true">&times;</span></button>
 										<h5>选择框</h5>
 									</li>
 									<li class="list-group-item">
+										<button type="button" class="close btn-remove-module-object"><span aria-hidden="true">&times;</span></button>
 										<h5>循环体</h5>
 									</li>
 									<li class="list-group-item">
+										<button type="button" class="close btn-remove-module-object"><span aria-hidden="true">&times;</span></button>
 										<h5>附加容器</h5>
 									</li>
 								</ul>
+							</div>
+							
+							<div class="name" style="position: absolute;left:20px;top:820px;width:560px;height:100px;">
+								<h5><button id="getItemResultList" type="button" class="btn btn-sm btn-info">获取元素列表</button>（不显示，仅供开发调试用）</h5>
+								<pre id="serialize_output"></pre>
 							</div>
 						</div>
 
@@ -168,10 +179,48 @@
 	</div><!--/.container-fluid -->
 
 
-
-
-
 	<script src="http://game.gtimg.cn/images/js/jquery/jquery-1.9.1.min.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
+	<script src="/js/jquery-sortable.js"></script>
+	<script>
+		(function(){
+			$("ul.list-drag-drop-group").sortable({
+				group: 'no-drop',
+				handle: 'li.list-group-item',
+				onDragStart: function ($item, container, _super) {
+					// Duplicate items of the no drop area
+					if(!container.options.drop)
+					$item.clone().insertAfter($item);
+					_super($item, container);
+					// getItemResultList()
+				}
+			});
+			$("ul.list-drag-group").sortable({
+				group: 'no-drop',
+				// handle: 'li.list-group-item',
+				drop: false
+			});
+
+			function getItemResultList(){
+				var itemResultHTML = "";
+					$("ul.list-drag-drop-group li").each(function(){
+						 itemResultHTML+= $(this).find("h5").html();
+						 itemResultHTML+= ", ";
+					})
+					$('#serialize_output').html(itemResultHTML);
+
+			}
+			$("#getItemResultList").on("click",function(){
+				getItemResultList();
+				return false;
+			});
+			
+			// close func bind
+			$("ul.list-drag-drop-group").on("click","button.close",function(){
+				$(this).parents("li.list-group-item").remove();
+			});
+		})()
+	</script>
+
 </body>
 </html>

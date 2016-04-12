@@ -26,6 +26,7 @@
 					<li><a href="/html/list/">专题列表</a></li>
 					<li><a href="/html/user">个人中心</a></li>
 					<li class="active"><a href="/html/manage">系统管理</a></li>
+					<li><a href="sm-template.html">模板管理</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
@@ -156,7 +157,7 @@
 												<option value="">否</option>
 											</select>
 										</div>
-										<label for="" class="control-label col-sm-4">标签输入</label>
+										<label id="labelOptionalContent1Tag1" for="" class="control-label col-sm-4">标签输入</label>
 										<div class="col-sm-8"><input type="text" class="form-control" value="标签输入呀呀呀"></div>
 									</li>
 									<!-- 表格 -->
@@ -177,12 +178,14 @@
 									<li class="form-group list-group-item">
 										<label id="labelSelectBox1" for="" class="control-label col-sm-4">选择菜单数</label>
 										<div class="col-sm-8">
-											<input type="number" class="form-control">
+											<input type="number" class="form-control select-config-handle" >
 										</div>
-										<label for="" class="control-label col-sm-4">菜单1名称</label>
-										<div class="col-sm-8"><input type="text" class="form-control" value="标签输入"></div>
-										<label for="" class="control-label col-sm-4">菜单2名称</label>
-										<div class="col-sm-8"><input type="text" class="form-control" value="标签输入"></div>
+										<div class="select-config-group">
+											<label for="" class="control-label col-sm-4">菜单1名称</label>
+											<div class="col-sm-8"><input type="text" class="form-control" value="标签输入"></div>
+											<label for="" class="control-label col-sm-4">菜单2名称</label>
+											<div class="col-sm-8"><input type="text" class="form-control" value="标签输入"></div>
+										</div>
 									</li>
 
 									<!-- 循环体 -->
@@ -293,7 +296,7 @@
 											</li>
 											<li class="form-group list-group-item">
 												<label for="" class="control-label col-sm-4">输入框名称输入</label>
-												<div class="col-sm-8"><input type="text" class="form-control" value="标签输入"></div>
+												<div class="col-sm-8"><input rel="#labelOptionalContent1Tag1" type="text" class="form-control" value="标签输入"></div>
 											</li>
 										</ul>
 									</fieldset>
@@ -334,8 +337,20 @@
 											</li>
 											<li class="form-group list-group-item">
 												<div class="col-md-offset-4 col-sm-8">
-													<button type="button" onclick="" title="" class="btn btn-info">+新增内容</button>
+													<button id="btnAddLoopContent1" type="button" onclick="BootstrapDialog.show(dialogAddLoopContent);" title="" class="btn btn-info">+新增内容</button>
 												</div>
+											</li>
+										</ul>
+										<ul class="list-group loop-content-group">
+											<li class="form-group list-group-item">
+												<label for="" class="control-label col-sm-4">文本名称输入</label>
+												<div class="col-sm-7"><input rel="#labelText1" type="text" class="form-control" value="文本输入"></div>
+												<div class="col-sm-0"><button type="button" class="close btn-remove-loop-content" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
+											</li>
+											<li class="form-group list-group-item">
+												<label for="" class="control-label col-sm-4">图片名称输入</label>
+												<div class="col-sm-7"><input rel="#labelText1" type="text" class="form-control" value="图片输入"></div>
+												<div class="col-sm-0"><button type="button" class="close btn-remove-loop-content" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
 											</li>
 										</ul>
 									</fieldset>
@@ -369,6 +384,48 @@
 
 	<script src="http://game.gtimg.cn/images/js/jquery/jquery-1.9.1.min.js"></script>
 	<script src="/js/bootstrap.min.js"></script>
+	<!-- 
+		* bootstrap-dilog
+		* docs: https://nakupanda.github.io/bootstrap3-dialog/
+	-->
+	<link rel="stylesheet" href="/css/bootstrap/bootstrap-dialog.min.css">
+	<script src="/js/bootstrap-dialog.min.js"></script>
+	<script>
+		var $dialogContent = $('<form class="form-horizontal"><ul class="list-group"></ul></form>');
+		    $dialogContent.append('<li class="form-group list-group-item"><label for="" class="control-label col-sm-3">内容名称</label><div class="col-sm-8"><input rel="#labelLoopContent1" type="text" class="form-control" value=""></div></li>');
+		    $dialogContent.append('<li class="form-group list-group-item"><label for="" class="control-label col-sm-3">内容类型</label><div class="col-sm-8"><select name="" class="form-control"><option value="" selected="selected">文本</option><option value="">链接</option><option value="">图片</option><option value="">视频</option><option value="">段落</option><option value="">自定义</option></select></div></li>');
+	   	var dialogAddLoopContent = {
+	        title: '新建循环体内容',
+	        message: $dialogContent,
+	        buttons: [
+	        {
+	            label: '确定',
+	            cssClass: 'btn-warning',
+	            action: function(dialogRef){
+	                console.log('submit form');
+	                dialogLoopContentAppend();
+	                dialogRef.close();
+	            }
+	        },
+	        {
+	            label: '关闭',
+	            action: function(dialogRef){
+	                dialogRef.close();
+	            }
+	        }]
+	    };
+	    var dialogLoopContentAppend = function(){
+	    	var appendHTML ='<li class="form-group list-group-item">'
+	    		appendHTML+='<label for="" class="control-label col-sm-4">图片名称输入</label>'
+	    		appendHTML+='<div class="col-sm-6"><input rel="#labelText1" type="text" class="form-control" value="图片输入"></div>'
+				appendHTML+='<div class="col-sm-0"><button class="btn btn-xs btn-danger btn-remove-loop-content">X</button></div>'
+				appendHTML+='</li>'
+			$("ul.loop-content-group").append(appendHTML);
+	    }
+
+	    // BootstrapDialog.show(dialogSet);
+	</script>
+
 	<script type="text/javascript">
 		(function(){
 			// 配置文本修改直接显示到『最终呈现』
@@ -408,7 +465,34 @@
 				})
 				// console.log(selectValHTML);
 				$(_selfAttr).html(selectValHTML)
-			})
+			});
+
+			//选择菜单数修改后，自动在『最终呈现』里显不
+			$("div.module-config-box").on("input propertychange","input.select-config-handle",function(){
+				var _self = $(this),
+					_selfVal = parseInt(_self.val()),
+					selectValHTML = "";
+				if( _selfVal>10 ) return
+				for(i=0; i<_selfVal; i++){
+					selectValHTML+= '<label for="" class="control-label col-sm-4">菜单'+(i+1)+'名称</label>';
+					selectValHTML+= '<div class="col-sm-8"><input type="text" class="form-control" value="标签输入"></div>';
+				}
+				_self.parents("li.list-group-item").find("div.select-config-group").html(selectValHTML);
+
+			});
+
+			// 循环体按钮事件绑定
+			$("ul.loop-content-group").on("click","button.btn-remove-loop-content",function(){
+				var r=confirm("是否确认删除本内容")
+				if(r){
+					console.log("del")
+					$(this).parents("li.list-group-item").remove();
+				}
+				return false;
+			});
+
+
+
 		})()
 	</script>
 </body>
