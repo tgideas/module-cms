@@ -8,7 +8,10 @@
     "gulp-connect": "^3.2.1"
   },
   "devDependencies": {
-    "gulp-connect": "^3.2.1"
+    "del": "^2.2.0",
+    "gulp": "git://github.com/gulpjs/gulp#4.0",
+    "gulp-connect": "^3.2.1",
+    "promise": "^7.1.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

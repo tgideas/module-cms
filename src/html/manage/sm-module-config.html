@@ -178,21 +178,36 @@
 									<li class="form-group list-group-item">
 										<label id="labelSelectBox1" for="" class="control-label col-sm-4">选择菜单数</label>
 										<div class="col-sm-8">
-											<input type="number" class="form-control select-config-handle" >
+											<!-- <input type="number" class="form-control select-config-handle" > -->
+											<select id="inputStyleSelect1" name="" class="form-control select-config-handle">
+												<option value="1" selected>1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+												<option value="4">4</option>
+												<option value="5">5</option>
+												<option value="6">6</option>
+												<option value="7">7</option>
+												<option value="8">8</option>
+												<option value="9">9</option>
+												<option value="10">10</option>
+											</select>
 										</div>
-										<div class="select-config-group">
+										<div id="selectConfigGroup" class="select-config-group">
 											<label for="" class="control-label col-sm-4">菜单1名称</label>
-											<div class="col-sm-8"><input type="text" class="form-control" value="标签输入"></div>
-											<label for="" class="control-label col-sm-4">菜单2名称</label>
 											<div class="col-sm-8"><input type="text" class="form-control" value="标签输入"></div>
 										</div>
 									</li>
 
 									<!-- 循环体 -->
-									<li class="form-group list-group-item">
-										<label  id="labelLoopContent1" for="" class="control-label col-sm-4">礼包数量输入</label>
+									<li class="form-group list-group-item list-group-loops">
+										<label id="labelLoopContent1" for="" class="control-label col-sm-4">循环体名称</label>
 										<div class="col-sm-8">
-											<input type="number" class="form-control">
+											<input type="number" class="form-control loop-content-config-handle">
+										</div>
+										<div class="clearfix"></div>
+										<div class="list-group-loop-content-box">
+											
+
 										</div>
 									</li>
 									<!-- 附加容器 -->
@@ -233,11 +248,13 @@
 										<ul rel="#inputStyleSelect1" class="list-group style-config-group">
 											<li class="form-group list-group-item">
 												<label for="" class="control-label col-sm-4">样式1名称输入</label>
-												<div class="col-sm-8"><input type="text" class="form-control" value="一行1个"></div>
+												<div class="col-sm-4"><input type="text" class="form-control" value="一行1个"></div>
+												<div class="col-sm-4"><input type="text" class="form-control" value="" placeholder="对应类名"></div>
 											</li>
 											<li class="form-group list-group-item">
 												<label for="" class="control-label col-sm-4">样式2名称输入</label>
-												<div class="col-sm-8"><input type="text" class="form-control" value="一行2个"></div>
+												<div class="col-sm-4"><input type="text" class="form-control" value="一行2个"></div>
+												<div class="col-sm-4"><input type="text" class="form-control" value="" placeholder="对应类名"></div>
 											</li>
 										</ul>
 									</fieldset>
@@ -320,10 +337,28 @@
 									</fieldset>
 									<fieldset>
 										<legend>选择框</legend>
-										<ul class="list-group">
+										<ul class="list-group select-config-group">
 											<li class="form-group list-group-item">
 												<label for="" class="control-label col-sm-4">选择框名称输入</label>
 												<div class="col-sm-8"><input rel="#labelSelectBox1" type="text" class="form-control" value="选择菜单数"></div>
+											</li>
+											<li class="form-group list-group-item">
+												<label for="" class="control-label col-sm-4">选择框数量</label>
+												<div class="col-sm-8">
+													<select rel="#" id="" name="" class="form-control">
+														<option value="0" selected="selected">请选择数量</option>
+														<option value="1">1</option>
+														<option value="2">2</option>
+														<option value="3">3</option>
+														<option value="4">4</option>
+														<option value="5">5</option>
+														<option value="6">6</option>
+														<option value="7">7</option>
+														<option value="8">8</option>
+														<option value="9">9</option>
+														<option value="10">10</option>
+													</select>
+												</div>
 											</li>
 										</ul>
 									</fieldset>
@@ -333,7 +368,7 @@
 										<ul class="list-group">
 											<li class="form-group list-group-item">
 												<label for="" class="control-label col-sm-4">循环体名称输入</label>
-												<div class="col-sm-8"><input rel="#labelLoopContent1" type="text" class="form-control" value="礼包数量输入"></div>
+												<div class="col-sm-8"><input rel="#labelLoopContent1" type="text" class="form-control" value="循环体名称"></div>
 											</li>
 											<li class="form-group list-group-item">
 												<div class="col-md-offset-4 col-sm-8">
@@ -342,16 +377,6 @@
 											</li>
 										</ul>
 										<ul class="list-group loop-content-group">
-											<li class="form-group list-group-item">
-												<label for="" class="control-label col-sm-4">文本名称输入</label>
-												<div class="col-sm-7"><input rel="#labelText1" type="text" class="form-control" value="文本输入"></div>
-												<div class="col-sm-0"><button type="button" class="close btn-remove-loop-content" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
-											</li>
-											<li class="form-group list-group-item">
-												<label for="" class="control-label col-sm-4">图片名称输入</label>
-												<div class="col-sm-7"><input rel="#labelText1" type="text" class="form-control" value="图片输入"></div>
-												<div class="col-sm-0"><button type="button" class="close btn-remove-loop-content" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
-											</li>
 										</ul>
 									</fieldset>
 									
@@ -392,8 +417,8 @@
 	<script src="/js/bootstrap-dialog.min.js"></script>
 	<script>
 		var $dialogContent = $('<form class="form-horizontal"><ul class="list-group"></ul></form>');
-		    $dialogContent.append('<li class="form-group list-group-item"><label for="" class="control-label col-sm-3">内容名称</label><div class="col-sm-8"><input rel="#labelLoopContent1" type="text" class="form-control" value=""></div></li>');
-		    $dialogContent.append('<li class="form-group list-group-item"><label for="" class="control-label col-sm-3">内容类型</label><div class="col-sm-8"><select name="" class="form-control"><option value="" selected="selected">文本</option><option value="">链接</option><option value="">图片</option><option value="">视频</option><option value="">段落</option><option value="">自定义</option></select></div></li>');
+		    $dialogContent.append('<li class="form-group list-group-item"><label for="" class="control-label col-sm-3">内容类型</label><div class="col-sm-8"><select id="loopContentDialogTypes" class="form-control"><option value="text" selected="selected">文本</option><option value="link">链接</option><option value="img">图片</option><option value="video">视频</option><option value="p">段落</option><option value="custom">自定义</option></select></div></li>');
+		    $dialogContent.append('<li class="form-group list-group-item"><label for="" class="control-label col-sm-3">内容名称</label><div class="col-sm-8"><input id="loopContentDialogName" type="text" class="form-control" value=""></div></li>');
 	   	var dialogAddLoopContent = {
 	        title: '新建循环体内容',
 	        message: $dialogContent,
@@ -402,8 +427,10 @@
 	            label: '确定',
 	            cssClass: 'btn-warning',
 	            action: function(dialogRef){
-	                console.log('submit form');
-	                dialogLoopContentAppend();
+	                var loopType = $("#loopContentDialogTypes").val(),
+	                	loopName = $("#loopContentDialogName").val();
+	                // console.log(loopType + " " + loopName);
+	                dialogLoopContentAppend(loopType,loopName);
 	                dialogRef.close();
 	            }
 	        },
@@ -414,11 +441,34 @@
 	            }
 	        }]
 	    };
-	    var dialogLoopContentAppend = function(){
+	    var dialogLoopContentAppend = function(loopType,loopName){
+	    	var loopType = loopType || text,
+	    		loopName = loopName || "文本输入",
+	    		loopTypeHTML = "";
+	    	switch (loopType){
+	    		case "text" :
+	    			loopTypeHTML = '<input type="text" class="form-control" value="图片输入"></div>';
+	    			break;
+	    		case "link" :
+					loopTypeHTML = '<input type="text" class="form-control" value="连接输入"></div>';
+					break;
+				case "img" :
+					loopTypeHTML = '<input type="text" class="form-control" value="图片地址"></div>';
+					break;
+				case "video" :
+					loopTypeHTML = '<input type="text" class="form-control" value="视频VID"></div>';
+					break;
+				case "p" :
+					loopTypeHTML = '<textarea rows="4" class="form-control">段落内容</textarea>';
+					break;
+				case "custom" :
+					loopTypeHTML = '<textarea rows="4" class="form-control">自定义代码</textarea>';
+					break;
+	    	}
 	    	var appendHTML ='<li class="form-group list-group-item">'
-	    		appendHTML+='<label for="" class="control-label col-sm-4">图片名称输入</label>'
-	    		appendHTML+='<div class="col-sm-6"><input rel="#labelText1" type="text" class="form-control" value="图片输入"></div>'
-				appendHTML+='<div class="col-sm-0"><button class="btn btn-xs btn-danger btn-remove-loop-content">X</button></div>'
+	    		appendHTML+='<label for="" class="control-label col-sm-4">'+loopName+'</label>'
+	    		appendHTML+='<div class="col-sm-7">'+loopTypeHTML+'</div>'
+				appendHTML+='<div class="col-sm-0"><button type="button" class="close btn-remove-loop-content" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>'
 				appendHTML+='</li>'
 			$("ul.loop-content-group").append(appendHTML);
 	    }
@@ -441,15 +491,16 @@
 			$("select[name='formStyleSelect']").on("change",function(){
 				var _self = $(this),
 					_selfVal = _self.val(),
-					styleSleectHTML = "";
+					styleSelectHTML = "";
 				if (!_selfVal) return
 				for(i=0; i<_selfVal; i++){
-					styleSleectHTML += '<li class="form-group list-group-item">';
-					styleSleectHTML += '<label class="control-label col-sm-4">样式'+(i+1)+'名称输入</label>';
-					styleSleectHTML += '<div class="col-sm-8"><input type="text" class="form-control" value="样式'+(i+1)+'"></div>';
-					styleSleectHTML += '</li>';
+					styleSelectHTML += '<li class="form-group list-group-item">';
+					styleSelectHTML += '<label class="control-label col-sm-4">样式'+(i+1)+'名称输入</label>';
+					styleSelectHTML += '<div class="col-sm-4"><input type="text" class="form-control module-scheme-name" value="样式'+(i+1)+'"></div>';
+					styleSelectHTML += '<div class="col-sm-4"><input type="text" class="form-control module-scheme-class" value="" placeholder="对应类名"></div>';
+					styleSelectHTML += '</li>';
 				}
-				_self.parents("ul.list-group").siblings("ul.style-config-group").html(styleSleectHTML);
+				_self.parents("ul.list-group").siblings("ul.style-config-group").html(styleSelectHTML);
 				$("ul.style-config-group input").eq(0).trigger("input")
 			});
 
@@ -459,16 +510,18 @@
 					_selfAttr = _self.parents("ul.style-config-group").attr("rel"),
 					selectValHTML = "";
 				if(!_selfAttr) return
-				$("ul.style-config-group input[type='text']").each(function(i){
-					var v = $(this).val()
-					selectValHTML+= '<option value="'+(i+1)+'">'+v+'</option>';
+				$("ul.style-config-group input.module-scheme-name").each(function(i){
+					var n = $(this).val()
+					var v = $(this).parents(".list-group-item").find("input.module-scheme-class").val();
+					selectValHTML+= '<option value="'+v+'">'+n+'</option>';
 				})
 				// console.log(selectValHTML);
 				$(_selfAttr).html(selectValHTML)
 			});
 
-			//选择菜单数修改后，自动在『最终呈现』里显不
-			$("div.module-config-box").on("input propertychange","input.select-config-handle",function(){
+
+			//选择菜单数修改后，自动在『最终呈现』里显示
+			$("div.module-config-box").on("input propertychange",".select-config-handle",function(){
 				var _self = $(this),
 					_selfVal = parseInt(_self.val()),
 					selectValHTML = "";
@@ -480,12 +533,28 @@
 				_self.parents("li.list-group-item").find("div.select-config-group").html(selectValHTML);
 
 			});
+			// 循环体事件绑定
+			$("div.module-config-box").on("input propertychange",".loop-content-config-handle",function(){
+				var _self = $(this),
+					_selfVal = parseInt(_self.val()),
+					loopContentHTML = "";
+				if( _selfVal>10 ) return
+				for(i=0; i<_selfVal; i++){
+					loopContentHTML+= '<ul class="list-group">'
+					loopContentHTML+= '<li class="form-group list-group-item"><span class="label label-info">第'+(i+1)+'次循环</span></li>'
+					loopContentHTML+= $("ul.loop-content-group").html()
+					loopContentHTML+= '</ul>'
+				}
+				_self.parents("li.list-group-item").find(".list-group-loop-content-box").html(loopContentHTML);
 
-			// 循环体按钮事件绑定
+
+			});
+
+			// 删除按钮
 			$("ul.loop-content-group").on("click","button.btn-remove-loop-content",function(){
 				var r=confirm("是否确认删除本内容")
 				if(r){
-					console.log("del")
+					// console.log("del")
 					$(this).parents("li.list-group-item").remove();
 				}
 				return false;

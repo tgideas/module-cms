@@ -124,11 +124,13 @@ body {
 .list-group .list-group-item.dragged{position: absolute;}
 .list-drag-group button.close{display: none;}
 .form-horizontal .nav-tabs{margin-bottom:20px;}
-
 .interactive-drag-drop-group .list-group-item{color: #8A6D3E;background-color: #fcf8e3;}
 .interactive-drag-group {box-shadow:none;margin:0;}
 .interactive-drag-group .list-group-item{display: inline-block;width:18.6666%;background:none;border:none;}
 .interactive-drag-drop-group .list-group-item img{display: none;}
+.list-group-loops ul.list-group{margin-left:40px;}
+
+
 
 /* create
 ---------------------------------- */
