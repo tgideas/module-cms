@@ -124,17 +124,22 @@ body {
 .list-group .list-group-item.dragged{position: absolute;}
 .list-drag-group button.close{display: none;}
 .form-horizontal .nav-tabs{margin-bottom:20px;}
-.interactive-drag-drop-group .list-group-item{color: #8A6D3E;background-color: #fcf8e3;}
+.interactive-drag-drop-group{box-shadow:none;}
+.interactive-drag-drop-group .list-group-item{position: relative;color: #8A6D3E;background-color: #fcf8e3;}
+.interactive-drag-drop-group .list-group-item{padding:0;background:none;border:none;}
+.interactive-drag-drop-group .list-group-item img.img-rounded{display: none;}
+.interactive-drag-drop-group .close{position: absolute;right:2px;top:0px;z-index:9;}
+
 .interactive-drag-group {box-shadow:none;margin:0;}
 .interactive-drag-group .list-group-item{display: inline-block;width:18.6666%;background:none;border:none;}
-.interactive-drag-drop-group .list-group-item img{display: none;}
+.interactive-drag-group .thumbnail{cursor:move;}
 .list-group-loops ul.list-group{margin-left:40px;}
 
 
 
 /* create
 ---------------------------------- */
-.page-preview-box{position: relative;width:491px;padding:107px 58px 150px 58px;margin-right:40px;background:url(/images/iphone6-mockup.png);}
+.page-preview-box{position: relative;width:491px;padding:107px 58px 150px 58px;margin-right:20px;background:url(/images/iphone6-mockup.png);}
 .page-base-info{margin:10px 0 0 10px;padding:20px;background-color: #fdfdfd;border:1px solid #eee;border-radius:3px;border-left:5px solid #5bc0de;}
 .page-preview-box-tips{position: absolute;width:76%;top:40%;font-size:2em;color: #ccc;text-align: center;}
 

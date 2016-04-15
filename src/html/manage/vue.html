@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.jsdelivr.net/vue/latest/vue.js"></script>
+</head>
+<body>
+	
+<div class="app">
+    <h3>{{ message }}</h3>
+    <input v-model="message" type="text">
+</div>
+
+<div class="app2">
+    <h3>{{ messageA }}</h3>
+    <input v-model="messageA" type="text">
+</div>
+
+
+<script>
+new Vue({
+  el: '.app',
+  data: {
+    message: 'Hello Vue.js!',
+    messageA: 'Hi Vue'
+  }
+})
+new Vue({
+  el: '.app2',
+  data: {
+    message: 'Hello Vue.js!',
+    messageA: 'Hi Vue'
+  }
+})
+
+</script>
+
+</body>
+</html>

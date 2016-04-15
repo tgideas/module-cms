@@ -144,39 +144,39 @@
 							<div class="form-group">
 								<label class="col-sm-1 control-label">处理人</label>
 								<div class="col-sm-3">
-									<label class="radio-inline"><input type="radio" name="treatmentType[]" id="treatmentType1" value="内部跟进"> 内部跟进</label>
+									<label class="radio-inline"><input type="radio" name="treatmentType[]" id="treatmentType1" value="内部跟进" checked="checked"> 内部跟进</label>
 									<label class="radio-inline"><input type="radio" name="treatmentType[]" id="treatmentType2" value="外包跟进"> 外包跟进</label>
 								</div>
 								<label class="col-sm-1 control-label">功能选择</label>
 								<div class="col-sm-3">
-									<label class="radio-inline"><input type="radio" name="function[]" id="function1" value="内部跟进"> 不带功能</label>
+									<label class="radio-inline"><input type="radio" name="function[]" id="function1" value="内部跟进" checked="checked"> 不带功能</label>
 									<label class="radio-inline"><input type="radio" name="function[]" id="function2" value="外包跟进"> 带功能</label>
 								</div>
 							</div>
 							<div class="form-group">
 								<label class="col-sm-1 control-label">模板选择</label>
 								<div class="col-sm-3">
-									<label class="radio-inline"><input type="radio" name="templateSelect[]" id="templateSelect1" value="全新配置"> 全新配置</label>
+									<label class="radio-inline"><input type="radio" name="templateSelect[]" id="templateSelect1" value="全新配置" checked="checked"> 全新配置</label>
 									<label class="radio-inline"><input type="radio" name="templateSelect[]" id="templateSelect2" value="基于模板"> 基于模板</label>
 								</div>
 							</div>
-							<div id="" class="form-group" style="display:block">
+							<div id="templateListGroup" class="form-group" style="display:none">
 								<div class="col-sm-offset-1">
 									<div class="col-md-6 col-md-2 ">
-										<div class="thumbnail">
+										<a href="javascript:;" class="thumbnail">
 											<img src="http://dummyimage.com/200x150/222/fff.png&text=%3Cimg%3E" alt="...">
 											<div class="caption">
-												<h4 class="text-center">模板名称1</h4>
+												<label class="radio-inline"><input type="radio" name="templateGloupSelect[]" id="templateSelect1" value="option1">模板名称1</label>
 											</div>
-										</div>
+										</a>
 									</div>
 									<div class="col-md-6 col-md-2 ">
-										<div class="thumbnail">
+										<a href="javascript:;" class="thumbnail">
 											<img src="http://dummyimage.com/200x150/222/fff.png&text=%3Cimg%3E" alt="...">
 											<div class="caption">
-												<h4 class="text-center">模板名称2</h4>
+												<label class="radio-inline"><input type="radio" name="templateGloupSelect[]" id="templateSelect2" value="option1">模板名称1</label>
 											</div>
-										</div>
+										</a>
 									</div>
 								</div>
 							</div>
@@ -222,6 +222,22 @@
 	        }]
 	    };
 	    // BootstrapDialog.show(dialogSet);
+	    // 
+	    // 
+	    
+	    (function(){
+	    	$("input[name='templateSelect[]']").on("change",function(){
+	    		if($("#templateSelect2").is(":checked")){
+	    			$("#templateListGroup").show();
+	    		}else{
+	    			$("#templateListGroup").hide();
+	    		}
+	    	})
+
+	    	$("#templateListGroup .thumbnail").on("click",function(){
+	    		$(this).find("input[type='radio']")[0].checked='checked'
+	    	})
+	    })()
 	</script>
 </body>
 </html>

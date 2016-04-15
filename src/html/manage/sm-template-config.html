@@ -4,8 +4,16 @@
 	<meta charset="UTF-8">
 	<title>模板管理 - Tgideas 模板化系统</title>
 	<link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+	<link href="http://game.gtimg.cn/images/js/mocha/mocha-1.1.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="/css/bootstrap/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="/css/system.css">
+	<style>
+		body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;}
+		h4{font-size:18px;}
+		
+		html{font-size:100px;}
+		body{font-size:0.14rem;}
+	</style>
 </head>
 <body>
 	<!-- navbar -->
@@ -110,18 +118,13 @@
 								<div style="overflow: hidden;overflow-y:auto;width:375px;height:667px;background-color:#f1f1f1">
 									<p class="page-preview-box-tips">从右侧拖拽模块</p>
 									<ul class="list-group list-drag-drop-group interactive-drag-drop-group">
-										<li class="list-group-item">navigation(导航栏模块)</li>
-										<li class="list-group-item">slider(图片轮播模块)</li>
-										<li class="list-group-item">lottery(抽奖模块)</li>
-										<li class="list-group-item">txt-list(文字列表模块)</li>
-
-										<li class="list-group-item">
+										<!-- <li class="list-group-item">
 											<button type="button" class="close btn-remove-module-object"><span aria-hidden="true">&times;</span></button>
 											<a href="javascript:;" class="text-center">
 												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
 												<label>模块名称</label>
 											</a>
-										</li>
+										</li> -->
 									</ul>
 								</div>
 							</div>
@@ -132,31 +135,31 @@
 										<li class="list-group-item">
 											<a href="javascript:;" class="thumbnail text-center">
 												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
-												<label>基础1</label>
+												<label rel="button">基础1</label>
 											</a>
 										</li>
 										<li class="list-group-item">
 											<a href="javascript:;" class="thumbnail text-center">
 												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
-												<label>基础2</label>
+												<label rel="title">基础2</label>
 											</a>
 										</li>
 										<li class="list-group-item">
 											<a href="javascript:;" class="thumbnail text-center">
 												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
-												<label>基础3</label>
+												<label rel="txtlist">基础3</label>
 											</a>
 										</li>
 										<li class="list-group-item">
 											<a href="javascript:;" class="thumbnail text-center">
 												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
-												<label>基础4</label>
+												<label rel="navigation">基础4</label>
 											</a>
 										</li>
 										<li class="list-group-item">
 											<a href="javascript:;" class="thumbnail text-center">
 												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
-												<label>基础5</label>
+												<label rel="piclist">基础5</label>
 											</a>
 										</li>
 									</ul>
@@ -168,19 +171,19 @@
 										<li class="list-group-item">
 											<a href="javascript:;" class="thumbnail text-center">
 												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
-												<label>抽奖1</label>
+												<label rel="navigation">抽奖1</label>
 											</a>
 										</li>
 										<li class="list-group-item">
 											<a href="javascript:;" class="thumbnail text-center">
 												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
-												<label>抽奖2</label>
+												<label rel="button">抽奖2</label>
 											</a>
 										</li>
 										<li class="list-group-item">
 											<a href="javascript:;" class="thumbnail text-center">
 												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
-												<label>抽奖3</label>
+												<label rel="title">抽奖3</label>
 											</a>
 										</li>
 									</ul>
@@ -191,25 +194,25 @@
 										<li class="list-group-item">
 											<a href="javascript:;" class="thumbnail text-center">
 												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
-												<label>图文1</label>
+												<label rel="navigation">图文1</label>
 											</a>
 										</li>
 										<li class="list-group-item">
 											<a href="javascript:;" class="thumbnail text-center">
 												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
-												<label>图文2</label>
+												<label rel="button">图文2</label>
 											</a>
 										</li>
 										<li class="list-group-item">
 											<a href="javascript:;" class="thumbnail text-center">
 												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
-												<label>图文3</label>
+												<label rel="title">图文3</label>
 											</a>
 										</li>
 										<li class="list-group-item">
 											<a href="javascript:;" class="thumbnail text-center">
 												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
-												<label>图文4</label>
+												<label rel="txtlist">图文4</label>
 											</a>
 										</li>
 									</ul>
@@ -220,31 +223,31 @@
 										<li class="list-group-item">
 											<a href="javascript:;" class="thumbnail text-center">
 												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
-												<label>展示1</label>
+												<label rel="navigation">展示1</label>
 											</a>
 										</li>
 										<li class="list-group-item">
 											<a href="javascript:;" class="thumbnail text-center">
 												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
-												<label>展示2</label>
+												<label rel="button">展示2</label>
 											</a>
 										</li>
 										<li class="list-group-item">
 											<a href="javascript:;" class="thumbnail text-center">
 												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
-												<label>展示3</label>
+												<label rel="title">展示3</label>
 											</a>
 										</li>
 										<li class="list-group-item">
 											<a href="javascript:;" class="thumbnail text-center">
 												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
-												<label>展示4</label>
+												<label rel="piclist">展示4</label>
 											</a>
 										</li>
 										<li class="list-group-item">
 											<a href="javascript:;" class="thumbnail text-center">
 												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
-												<label>展示5</label>
+												<label rel="txtlist">展示5</label>
 											</a>
 										</li>
 									</ul>
@@ -276,6 +279,15 @@
 	<script src="/js/bootstrap.min.js"></script>
 	<script src="/js/jquery-sortable.js"></script>
 	<script>
+		var mochaUI = {
+			navigation : '<header class="mocha-nav mocha-navigation-scheme1 mocha-nav-skin1"><div class="mocha-nav-cover"></div><a href="javascript:;" class="mocha-nav-logo"><img src="http://dummyimage.com/40x40/000/fff" alt="游戏名字"><div class="mocha-nav-logo-desc"><h1>我叫MT2</h1><h2>焕新一代3D手游</h2></div></a><a href="javascript:;" class="mocha-nav-btn">关注</a></header>',
+			title : '<div class="mocha-title mocha-title-skin2"><h3 class="mocha-title-txt">标题文字</h3><div class="mocha-title-extra"><a href="#">链接1</a><a href="#">链接2</a></div></div>',
+			button : '<a href="javascript:;" class="mocha-button mocha-button-scheme1 mocha-button-skin1">主按钮</a>',
+			txtlist : '<div class="mocha-txt-list mocha-txt-list-scheme2 mocha-txt-list-skin1"><ul class="mocha-txt-list-ul"><li class="mocha-tlu-item"><cite class="mocha-tlu-item-icon style1">公告</cite><h4 class="mocha-tlu-item-title"><a href="#">11月新八本本爆料：木桩世界BOSS</a></h4><p class="mocha-tlu-item-meta"><em>我叫MT运营团队</em><time>11/03</time></p></li></ul></div>'	,	
+			piclist : '<div class="mocha-pic-list mocha-pic-list-scheme2"><ul class="mocha-pic-list-ul"><li class="mocha-pic-list-item"><a href="#"><img width="100%" src="http://dummyimage.com/400x400/222/fff.png&amp;text=&lt;img&gt;" alt="" class="pic"></a></li><li class="mocha-pic-list-item"><a href="#"><img width="100%" src="http://dummyimage.com/400x400/222/fff.png&amp;text=&lt;img&gt;" alt="" class="pic"></a></li></ul></div>'
+		};
+
+
 		(function(){
 			$("ul.list-drag-drop-group").sortable({
 				group: 'no-drop',
@@ -285,13 +297,21 @@
 					if(!container.options.drop)
 					$item.clone().insertAfter($item);
 					_super($item, container);
-					$item.find("a").removeClass("thumbnail");
-					var closeBtnHTML = '<button type="button" class="close btn-remove-module-object"><span aria-hidden="true">&times;</span></button>';
-					var d = $item.find("button.btn-remove-module-object")[0];
-					if(!d){
+
+					
+					var d = $item.find("button.btn-remove-module-object")[0],
+						m = $item.find("div.mocha-wrapper")[0];
+						h = $item.find("label").attr("rel") || "title";
+					if(!d){ 
+						var closeBtnHTML = '<button type="button" class="close btn-remove-module-object"><span aria-hidden="true">&times;</span></button>';
 						$item.prepend(closeBtnHTML);
-						console.log("btn prepend")
 					}
+					if(!m){
+						var moduleHTML = $('<div class="mocha-wrapper"></div>')
+						moduleHTML = moduleHTML.append(mochaUI[h]);
+						$item.append(moduleHTML);
+					}
+					$item.find("a.thumbnail").remove();
 				}
 			});
 			$("ul.list-drag-group").sortable({
