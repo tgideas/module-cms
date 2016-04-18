@@ -3,13 +3,9 @@
   "version": "1.0.0",
   "description": "Tgideas Module System",
   "main": "index.js",
-  "dependencies": {
-    "gulp": "^3.9.1",
-    "gulp-connect": "^3.2.1"
-  },
   "devDependencies": {
     "del": "^2.2.0",
-    "gulp": "git://github.com/gulpjs/gulp#4.0",
+    "gulp": "gulpjs/gulp#4.0",
     "gulp-connect": "^3.2.1",
     "promise": "^7.1.1"
   },

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>框架定制 - Tgideas 模块化系统</title>
+	<link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+	<link href="http://game.gtimg.cn/images/js/mocha/mocha-1.1.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="/css/bootstrap/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="/css/system.css">
+	<style>
+		body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;}
+		h4{font-size:18px;}
+		
+		html{font-size:100px;}
+		body{font-size:0.14rem;}
+	</style>
+</head>
+<body>
+	<!-- navbar -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="javascript:;">模块化系统</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="/html/">首页</a></li>
+					<li><a href="/html/list/">专题列表</a></li>
+					<li><a href="/html/user">个人中心</a></li>
+					<li><a href="/html/manage">系统管理</a></li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li><button type="button" class="btn btn-warning navbar-btn" onclick="window.location.href='/html/create/new-init.html'">新建专题</button></li>
+					<!-- 未登录时显示 -->
+					<!--<li><a href="#">请先登录</a></li>-->
+					<!-- 登录后显示 -->
+					
+					<li role="presentation" class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							欢迎你，sonichuang<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="">个人中心</a></li>
+							<li><a href="">菜单项一</a></li>
+							<li><a href="">菜单项二</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="">退出</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</nav><!--/.navbar -->
+	
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3 col-md-2 sidebar">
+				<ul class="nav nav-sidebar">
+					<li><a href="new-init.html">专题属性</a></li>
+					<li class="active">
+						<a href="new-pages.html">页面管理</a>
+						<ul class="nav nav-sidebar-sub">
+							<li role="presentation" class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+									专题首页 <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="#">专题首页</a></li>
+									<li><a href="#">活动说明页</a></li>
+									<li><a href="#">活动奖品页</a></li>
+									<li><a href="#">中奖公示页</a></li>
+								</ul>
+							</li>
+							<li><a href="new-layout.html">布局选择</a></li>
+							<li><a href="new-frame.html">框架定制</a></li>
+							<li class="active"><a href="new-module.html">模块配置</a></li>
+							<li><a href="new-page.html">页面配置</a></li>
+							<li><a href="new-page.html">预览提交</a></li>
+							<li><a href="new-page.html">活动说明页</a></li>
+						</ul>
+					</li>
+					<li><a href="new-preview.html">预览发布</a></li>
+				</ul>
+			</div><!--/.sidebar -->
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">				
+				<h1 class="page-header">模块配置</h1>
+
+				<!-- row(框架定制表单) -->
+				<div class="row">
+					<div class="col-md-8 page-preview-box">
+						<!-- 框架编辑体 -->
+						<div style="overflow: hidden;overflow-y:auto;width:375px;height:667px;background-color:#f1f1f1">
+							<!-- <p class="page-preview-box-tips">从右侧拖拽模块</p> -->
+							<!--
+							<ul class="list-group list-drag-drop-group interactive-drag-drop-group">
+							</ul>-->
+
+							<header class="mocha-nav mocha-navigation-scheme1 mocha-nav-skin1"><div class="mocha-nav-cover"></div><a href="javascript:;" class="mocha-nav-logo"><img src="http://dummyimage.com/40x40/000/fff" alt="游戏名字"><div class="mocha-nav-logo-desc"><h1>我叫MT2</h1><h2>焕新一代3D手游</h2></div></a><a href="javascript:;" class="mocha-nav-btn">关注</a></header>
+							<div class="mocha-title mocha-title-skin2"><h3 class="mocha-title-txt">标题文字</h3><div class="mocha-title-extra"><a href="javascript:;">链接1</a><a href="javascript:;">链接2</a></div></div>
+							<a href="javascript:;" class="mocha-button mocha-button-scheme1 mocha-button-skin1">主按钮</a>
+							<div class="mocha-txt-list mocha-txt-list-scheme2 mocha-txt-list-skin1"><ul class="mocha-txt-list-ul"><li class="mocha-tlu-item"><cite class="mocha-tlu-item-icon style1">公告</cite><h4 class="mocha-tlu-item-title"><a href="javascript:;">11月新八本本爆料：木桩世界BOSS</a></h4><p class="mocha-tlu-item-meta"><em>我叫MT运营团队</em><time>11/03</time></p></li></ul></div>
+							<div class="mocha-pic-list mocha-pic-list-scheme2"><ul class="mocha-pic-list-ul"><li class="mocha-pic-list-item"><a href="javascript:;"><img width="100%" src="http://dummyimage.com/400x400/222/fff.png&amp;text=&lt;img&gt;" alt="" class="pic"></a></li><li class="mocha-pic-list-item"><a href="javascript:;"><img width="100%" src="http://dummyimage.com/400x400/222/fff.png&amp;text=&lt;img&gt;" alt="" class="pic"></a></li></ul></div>
+
+
+						</div>
+					</div>
+					<div class="col-md-6">
+						<form id="" class="form-horizontal">
+							<div class="row">
+								<!-- <h4>页面全局配置</h4> -->
+								<div class="module-config-box">
+									<h3>页面全局配置</h3>
+									<ul class="list-group">
+										<li class="form-group list-group-item">
+											<label for="" class="control-label col-sm-4">背景颜色</label>
+											<div class="col-sm-8">
+												<input type="text" class="form-control" value="#">
+											</div>
+										</li>
+										<li class="form-group list-group-item">
+											<label for="" class="control-label col-sm-4">背景图片</label>
+											<div class="col-sm-8">
+												<input type="file" class="form-control" value="#">
+											</div>
+											<label for="" class="control-label col-sm-4">背景图是否平铺</label>
+											<div class="col-sm-8">
+												<label class="radio-inline col-sm-3"><input id="" name="pageBgRepeat[]" type="radio">是</label>
+												<label class="radio-inline col-sm-3"><input id="" name="pageBgRepeat[]" type="radio">否</label>
+											</div>
+										</li>
+									</ul>
+
+									<h3>模块配置（导航模块）</h3>
+									<!-- 
+										1. 图片上传
+										2. 可选内容（是否锁定在顶部）
+										2. 文字输入框（主标题）
+										3. 文本输入框（副标题）
+										4. 文本输入框（关注按钮名称）
+										5. 文本输入框（关注按钮链接）
+										6. 
+									 -->
+									<ul class="list-group">
+										<li class="form-group list-group-item">
+											
+										</li>
+										<li class="form-group list-group-item">
+											
+										</li>					
+	
+									</ul>
+								</div>
+
+							</div>
+
+							<div class="col-md-8 text-center">
+								<button type="button" class="btn btn-lg btn-success" onclick="window.location.href='new-frame.html'">下一步</button>
+							</div>
+						</form>
+					</div>
+
+				</div><!--/.row(框架定制表单) -->
+
+
+			</div><!--/.main -->
+		</div><!--/.row -->
+	</div><!--/.container-fluid -->
+
+	<script src="http://game.gtimg.cn/images/js/jquery/jquery-1.9.1.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>
