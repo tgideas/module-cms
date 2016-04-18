@@ -207,7 +207,6 @@
 										<div class="clearfix"></div>
 										<div class="list-group-loop-content-box">
 											
-
 										</div>
 									</li>
 									<!-- 附加容器 -->
@@ -447,7 +446,7 @@
 	    		loopTypeHTML = "";
 	    	switch (loopType){
 	    		case "text" :
-	    			loopTypeHTML = '<input type="text" class="form-control" value="图片输入"></div>';
+	    			loopTypeHTML = '<input type="text" class="form-control" value="文本输入"></div>';
 	    			break;
 	    		case "link" :
 					loopTypeHTML = '<input type="text" class="form-control" value="连接输入"></div>';
@@ -546,8 +545,6 @@
 					loopContentHTML+= '</ul>'
 				}
 				_self.parents("li.list-group-item").find(".list-group-loop-content-box").html(loopContentHTML);
-
-
 			});
 
 			// 删除按钮

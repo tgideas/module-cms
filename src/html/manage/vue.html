@@ -6,34 +6,48 @@
 	<script src="https://cdn.jsdelivr.net/vue/latest/vue.js"></script>
 </head>
 <body>
-	
-<div class="app">
-    <h3>{{ message }}</h3>
-    <input v-model="message" type="text">
-</div>
+<div id="wrap">
 
-<div class="app2">
-    <h3>{{ messageA }}</h3>
-    <input v-model="messageA" type="text">
-</div>
+  <div class="app">
+      <h3>{{message}}</h3>
+      <input v-model="message" type="text">
+  </div>
 
+  <div class="app4">
+      <h3>{{message}}</h3>
+     
+  </div>
+  <div class="app4">
+      <h3>{{message}}</h3>
+      <input v-model="message" type="text">
+  </div>
+
+  <div class="app3">
+      <h3><img src="{{url}}" alt="" width="200" height="200"></h3>
+      <input v-model="url" type="file">
+  </div>
+
+</div>
 
 <script>
 new Vue({
-  el: '.app',
+  el: '#wrap',
   data: {
     message: 'Hello Vue.js!',
-    messageA: 'Hi Vue'
   }
 })
 new Vue({
-  el: '.app2',
+  el: '#wrap',
   data: {
-    message: 'Hello Vue.js!',
-    messageA: 'Hi Vue'
+    message: 'Hi Vue',
   }
 })
-
+new Vue({
+  el: '.app3',
+  data: {
+    url: ''
+  }
+})
 </script>
 
 </body>
