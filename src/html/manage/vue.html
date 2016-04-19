@@ -13,12 +13,13 @@
       <input v-model="message" type="text">
   </div>
 
-  <div class="app4">
+
+
+  <div class="app9">
       <h3>{{message}}</h3>
-     
   </div>
-  <div class="app4">
-      <h3>{{message}}</h3>
+  <div class="app9">
+      <!-- h3>{{message}}</h3> -->
       <input v-model="message" type="text">
   </div>
 
@@ -31,17 +32,17 @@
 
 <script>
 new Vue({
-  el: '#wrap',
+  el: '.app9',
   data: {
     message: 'Hello Vue.js!',
   }
 })
-new Vue({
-  el: '#wrap',
-  data: {
-    message: 'Hi Vue',
-  }
-})
+// new Vue({
+//   el: '#wrap',
+//   data: {
+//     message: 'Hi Vue',
+//   }
+// })
 new Vue({
   el: '.app3',
   data: {

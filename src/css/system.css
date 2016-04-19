@@ -144,6 +144,8 @@ body {
 .page-preview-box .ppb-content{overflow: hidden;overflow-y:auto;width:375px;height:667px;background-color:#f1f1f1}
 .page-base-info{margin:10px 0 0 10px;padding:20px;background-color: #fdfdfd;border:1px solid #eee;border-radius:3px;border-left:5px solid #5bc0de;}
 .page-preview-box-tips{position: absolute;width:76%;top:40%;font-size:2em;color: #ccc;text-align: center;}
+.page-preview-box .panel-module-config{position: absolute;left:510px;top:260px;width:540px;}
+.page-preview-box .panel-module-config .panel-body{overflow: hidden;overflow-y:auto;max-height:580px;}
 
 .mocha-wrapper{border:2px solid #f1f1f1;}
 .mocha-wrapper.current{box-sizing:border-box;border:2px solid #0066cc;}
