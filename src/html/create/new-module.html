@@ -135,7 +135,7 @@
 							<div class="row">
 								
 								<!-- 全局配置 -->
-								<div class="panel panel-info">
+								<div class="panel panel-warning">
 									<div class="panel-heading"><h3 class="panel-title">页面全局配置</h3></div>
 									<div class="panel-body">
 										<ul class="list-group">
@@ -161,7 +161,7 @@
 								</div>
 
 								<!-- 模块配置(导航模块) -->
-								<div class="panel panel-warning panel-module-config">
+								<div class="panel panel-info panel-module-config">
 									<div class="panel-heading"><h3 class="panel-title">模块配置（导航模块）</h3></div>
 									<!-- 
 										1. 图片上传
@@ -225,7 +225,7 @@
 								</div>
 								
 								<!-- 模块配置(标题模块) -->
-								<div class="panel panel-warning panel-module-config">
+								<div class="panel panel-info panel-module-config">
 									<div class="panel-heading"><h3 class="panel-title">模块配置（标题模块）</h3></div>
 									<!-- 
 										1. 样式选择下拉框
@@ -238,7 +238,7 @@
 												<label for="" class="control-label col-sm-4">样式选择</label>
 												<div class="col-sm-8">
 													<select id="" name="" class="form-control" v-model="title1_skin">
-														<option selected="selected">请选择</option>
+														<option>请选择</option>
 														<option value="mocha-title-skin1">样式1</option>
 														<option value="mocha-title-skin2">样式2</option>
 														<option value="mocha-title-skin3">样式3</option>
@@ -256,7 +256,7 @@
 												<div class="col-sm-4">
 													<input v-model="text1_text" type="number" class="form-control loop-content-config-handle">
 												</div>
-												<div class="col-sm-1"><button type="button" v-on:click="doThis" class="btn btn-default">生成</button></div>
+												<div class="col-sm-1"><button type="button" v-on:click="newLoopLink" class="btn btn-default loop-content-generate-btn">生成</button></div>
 												<div class="clearfix"></div>
 												<div class="list-group-loop-content-box"></div>
 											</li>
@@ -265,7 +265,7 @@
 								</div>
 								
 								<!-- 模块配置(按钮模块) -->
-								<div class="panel panel-warning panel-module-config">
+								<div class="panel panel-info panel-module-config">
 									<div class="panel-heading"><h3 class="panel-title">模块配置（按钮模块）</h3></div>
 									<!-- 
 										1. 样式选择下拉框
@@ -276,7 +276,7 @@
 								</div>
 
 								<!-- 模块配置(文字列表模块) -->
-								<div class="panel panel-warning panel-module-config">
+								<div class="panel panel-info panel-module-config">
 									<div class="panel-heading"><h3 class="panel-title">模块配置（文字列表模块）</h3></div>
 									<!-- 
 										1. 样式选择下拉框
@@ -287,7 +287,7 @@
 								</div>
 
 								<!-- 模块配置(图片列表模块) -->
-								<div class="panel panel-warning panel-module-config">
+								<div class="panel panel-info panel-module-config">
 									<div class="panel-heading"><h3 class="panel-title">模块配置（图片列表模块）</h3></div>
 									<!-- 
 										1. 样式选择下拉框
@@ -330,15 +330,17 @@
 
 
 			// 循环体事件绑定
-			$("div.panel-body").on("input propertychange",".loop-content-config-handle",function(){
+			$("div.panel-body").on("click",".loop-content-generate-btn",function(){
 				var _self = $(this),
-					_selfVal = parseInt(_self.val()),
+					handle = _self.parents("li.list-group-item").find(".loop-content-config-handle"),
+					handleVal = parseInt(handle.val());
 					loopContentHTML = "";
+
 				var setInput = '<li class="form-group list-group-item"><label for="" class="control-label col-sm-4">链接名称</label><div class="col-sm-7"><input type="text" class="form-control" value="文本输入"></div><div class="col-sm-0"></div></li>';
 					setInput+= '<li class="form-group list-group-item"><label for="" class="control-label col-sm-4">链接地址</label><div class="col-sm-7"><input type="text" class="form-control" value="链接地址"></div><div class="col-sm-0"></div></li>';
 				
-				if( _selfVal>3 ) return
-				for(i=0; i<_selfVal; i++){
+				if( handleVal>3 ) return
+				for(i=0; i<handleVal; i++){
 					loopContentHTML+= '<ul class="list-group">';
 					loopContentHTML+= '<li class="form-group list-group-item"><button type="button" class="close btn-remove-loop-content" aria-label="Close"><span aria-hidden="true">×</span></button><span class="label label-info">第'+(i+1)+'次循环</span></li>';
 					loopContentHTML+= setInput;
@@ -367,7 +369,7 @@
 
 				// title ----------
 				title1_txt: '标题文字哈',
-				title1_skin: 'mocha-title-skin1',
+				title1_skin: 'mocha-title-skin2',
 				title1_loopLink: [
 					{ text: 'Link1', url: 'www.qq.com' },
 					{ text: 'Link2', url: 'www.tencent.com' }
