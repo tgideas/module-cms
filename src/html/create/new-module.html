@@ -108,7 +108,7 @@
 								<!-- 模块预览(导航模块)  -->
 								<header class="mocha-nav mocha-navigation-scheme1 mocha-nav-skin1" v-bind:style="{ backgroundColor: '#' + moduleBg }">
 									<div class="mocha-nav-cover"></div>
-									<a href="{{picLink}}" class="mocha-nav-logo">
+									<a href="javascript:;" url="{{picLink}}" class="mocha-nav-logo">
 										<img src="" v-bind:src="picUrl"  alt="{{mainTitle}}">
 										<div class="mocha-nav-logo-desc"><h1>{{mainTitle}}</h1><h2>{{subTitle}}</h2></div>
 									</a>
@@ -186,7 +186,7 @@
 									<h3 class="mocha-title-txt">{{txt}}</h3>
 									<div class="mocha-title-extra">
 										<template v-for="linkUrl in loopLink">
-											<a href="{{ linkUrl.url }}">{{ linkUrl.text }}</a>
+											<a href="javascript:;" url="{{ linkUrl.url }}">{{ linkUrl.text }}</a>
 										</template>
 									</div>
 								</div>
@@ -241,7 +241,7 @@
 							<div id="mochaButton1" class="mocha-wrapper">
 								<!-- 模块预览(按钮模块) -->
 								<template v-for="item in loopContent">
-									<a href="{{item.url}}" class="mocha-button mocha-button-skin1" v-bind:class="[(number < 4) ? 'mocha-button-scheme'+number : 'mocha-button-scheme4', (item.disable==1) ? 'mocha-button-disable' :'']">{{item.text}}</a>
+									<a href="javascript:;" url="{{item.url}}" class="mocha-button mocha-button-skin1" v-bind:class="[(number < 4) ? 'mocha-button-scheme'+number : 'mocha-button-scheme4', (item.disable==1) ? 'mocha-button-disable' :'']">{{item.text}}</a>
 								</template>
 								<!-- 模块配置(按钮模块) -->
 								<!-- 
@@ -371,7 +371,7 @@
 						</form>
 					</div>
 					<div class="col-md-12 text-center">
-						<button type="button" class="btn btn-lg btn-success" onclick="window.location.href='new-frame.html'">下一步</button>
+						<button type="button" class="btn btn-lg btn-success" onclick="window.location.href='new-frame.html'"><span class="glyphicon glyphicon-phone" aria-hidden="true"></span>下一步</button>
 					</div>
 				</div><!--/.row(框架定制表单) -->
 
@@ -397,9 +397,9 @@
 				$("div.panel-module-config").hide().eq(index).show();
 			})
 
-			$(".mocha-wrapper").on("click","a",function(){
-				return false;
-			})
+			// $(".mocha-wrapper").on("click","a",function(){
+			// 	return false;
+			// })
 
 			// 循环体事件绑定
 			$("div.panel-body").on("input propertychange",".loop-content-config-handle",function(){

@@ -110,6 +110,9 @@ body {
   border-radius: 50%;
 }
 
+/* list
+---------------------------------- */
+.list-filter-form{padding:7px 0;}
 
 /* manage
 ---------------------------------- */
@@ -134,8 +137,8 @@ body {
 .interactive-drag-group .list-group-item{display: inline-block;width:18.6666%;background:none;border:none;}
 .interactive-drag-group .thumbnail{cursor:move;}
 .list-group-loops ul.list-group{margin-left:40px;}
-
-
+.list-inline-block{letter-spacing:-0.35em;vertical-align: top;}
+.list-inline-block .col-md-2{letter-spacing:normal;float:none;display:inline-block;vertical-align: top;}
 
 
 /* create

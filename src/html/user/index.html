@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>皮肤管理 - Tgideas 模块化系统</title>
+	<title>模块管理 - Tgideas 模块化系统</title>
 	<link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
 	<link rel="stylesheet" href="/css/bootstrap/bootstrap-theme.min.css">
 	<link rel="stylesheet" href="/css/system.css">
@@ -24,8 +24,8 @@
 				<ul class="nav navbar-nav">
 					<li><a href="/html/">首页</a></li>
 					<li><a href="/html/list/">专题列表</a></li>
-					<li><a href="/html/user">个人中心</a></li>
-					<li class="active"><a href="/html/manage">系统管理</a></li>
+					<li class="active"><a href="/html/user">个人中心</a></li>
+					<li><a href="/html/manage">系统管理</a></li>
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
@@ -55,12 +55,9 @@
 		<div class="row">
 			<div class="col-sm-3 col-md-2 sidebar">
 				<ul class="nav nav-sidebar">
-					<li><a href="sm-module.html">模块管理</a></li>
-					<li><a href="sm-layout.html">布局管理</a></li>
-					<li class="active"><a href="sm-skin.html">皮肤管理</a></li>
-					<li><a href="sm-size.html">尺寸管理</a></li>
-					<li><a href="sm-tag.html">标签管理</a></li>
-					<li><a href="sm-template.html">模板管理</a></li>
+					<li class="active"><a href="index.html">我的产品</a></li>
+					<li><a href="my-activity.html">我的专题</a></li>
+					<li><a href="my-template.html">我的模板</a></li>
 				</ul>
 			</div><!--/.sidebar -->
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
@@ -68,105 +65,91 @@
 				<nav class="navbar navbar-default">
 					<div id="subNavbar" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
-							<li class="active"><a href="#">全部皮肤</a></li>
-							<li><a href="#">黄色系</a></li>
-							<li><a href="#">黄色系</a></li>
-							<li><a href="#">黄色系</a></li>
+							<li class="active"><a href="#">全部产品</a></li>
+							<!-- <li><a href="#">地下城与勇士</a></li>
+							<li><a href="#">天天酷跑</a></li>
+							<li><a href="#">英雄联盟</a></li> -->
 						</ul>
-						<div class="collapse navbar-collapse">
-							<ul class="nav navbar-nav navbar-right">
-								<li><button type="button" class="btn btn-default navbar-btn" onclick="window.location.href='sm-skin-add.html'">新增皮肤</button></li>
-							</ul>
-						</div>
 					</div><!--/.nav-collapse -->
 				</nav><!--/.nav-->
 				
-				<!-- row(全部皮肤展示列表) -->
-				<div class="row">
-					<div class="col-md-6 col-md-2">
+				<!-- row(全部模块展示列表) -->
+				<div class="row list-inline-block">
+					<div class="col-md-2">
 						<div class="thumbnail">
 							<img src="http://dummyimage.com/200x150/222/fff.png&text=%3Cimg%3E" alt="...">
 							<div class="caption">
-								<h3>皮肤名称</h3>
-								<p>皮肤介绍...</p>
-								<p><a href="#" class="btn btn-primary" role="编辑">编辑</a> <a href="#" class="btn btn-danger" role="删除">删除</a></p>
+								<h3>地下城与勇士</h3>
+								<p><a href="#" class="btn btn-primary" role="编辑">编辑</a></p>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6 col-md-2">
+					<div class="col-md-2">
 						<div class="thumbnail">
 							<img src="http://dummyimage.com/200x150/222/fff.png&text=%3Cimg%3E" alt="...">
 							<div class="caption">
-								<h3>皮肤名称</h3>
-								<p>皮肤介绍...</p>
-								<p><a href="#" class="btn btn-primary" role="编辑">编辑</a> <a href="#" class="btn btn-danger" role="删除">删除</a></p>
+								<h3>天天酷跑</h3>
+								<p><a href="#" class="btn btn-primary" role="编辑">编辑</a></p>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6 col-md-2">
+					<div class="col-md-2">
 						<div class="thumbnail">
 							<img src="http://dummyimage.com/200x150/222/fff.png&text=%3Cimg%3E" alt="...">
 							<div class="caption">
-								<h3>皮肤名称</h3>
-								<p>皮肤介绍...</p>
-								<p><a href="#" class="btn btn-primary" role="编辑">编辑</a> <a href="#" class="btn btn-danger" role="删除">删除</a></p>
+								<h3>英雄联盟</h3>
+								<p><a href="#" class="btn btn-primary" role="编辑">编辑</a></p>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6 col-md-2">
+					<div class="col-md-2">
 						<div class="thumbnail">
 							<img src="http://dummyimage.com/200x150/222/fff.png&text=%3Cimg%3E" alt="...">
 							<div class="caption">
-								<h3>皮肤名称</h3>
-								<p>皮肤介绍...</p>
-								<p><a href="#" class="btn btn-primary" role="编辑">编辑</a> <a href="#" class="btn btn-danger" role="删除">删除</a></p>
+								<h3>地下城与勇士</h3>
+								<p><a href="#" class="btn btn-primary" role="编辑">编辑</a></p>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6 col-md-2">
+					<div class="col-md-2">
 						<div class="thumbnail">
 							<img src="http://dummyimage.com/200x150/222/fff.png&text=%3Cimg%3E" alt="...">
 							<div class="caption">
-								<h3>皮肤名称</h3>
-								<p>皮肤介绍...</p>
-								<p><a href="#" class="btn btn-primary" role="编辑">编辑</a> <a href="#" class="btn btn-danger" role="删除">删除</a></p>
+								<h3>天天酷跑</h3>
+								<p><a href="#" class="btn btn-primary" role="编辑">编辑</a></p>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6 col-md-2">
+					<div class="col-md-2">
 						<div class="thumbnail">
 							<img src="http://dummyimage.com/200x150/222/fff.png&text=%3Cimg%3E" alt="...">
 							<div class="caption">
-								<h3>皮肤名称</h3>
-								<p>皮肤介绍...</p>
-								<p><a href="#" class="btn btn-primary" role="编辑">编辑</a> <a href="#" class="btn btn-danger" role="删除">删除</a></p>
+								<h3>英雄联盟</h3>
+								<p><a href="#" class="btn btn-primary" role="编辑">编辑</a></p>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6 col-md-2">
+					<div class="col-md-2">
 						<div class="thumbnail">
 							<img src="http://dummyimage.com/200x150/222/fff.png&text=%3Cimg%3E" alt="...">
 							<div class="caption">
-								<h3>皮肤名称</h3>
-								<p>皮肤介绍...</p>
-								<p><a href="#" class="btn btn-primary" role="编辑">编辑</a> <a href="#" class="btn btn-danger" role="删除">删除</a></p>
+								<h3>地下城与勇士</h3>
+								<p><a href="#" class="btn btn-primary" role="编辑">编辑</a></p>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6 col-md-2">
+					<div class="col-md-2">
 						<div class="thumbnail">
 							<img src="http://dummyimage.com/200x150/222/fff.png&text=%3Cimg%3E" alt="...">
 							<div class="caption">
-								<h3>皮肤名称</h3>
-								<p>皮肤介绍...</p>
-								<p><a href="#" class="btn btn-primary" role="编辑">编辑</a> <a href="#" class="btn btn-danger" role="删除">删除</a></p>
+								<h3>天天酷跑</h3>
+								<p><a href="#" class="btn btn-primary" role="编辑">编辑</a></p>
 							</div>
 						</div>
 					</div>
-				</div><!--/.row(全部皮肤展示列表) -->
+				</div><!--/.row(全部模块展示列表) -->
 				
 				<!-- pagination -->
-				<!--
 				<nav class="text-center">
 					<ul class="pagination">
 						<li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
@@ -177,7 +160,7 @@
 						<li><a href="#">5</a></li>
 						<li><a href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
 					</ul>
-				</nav>--><!--/.pagination -->
+				</nav><!--/.pagination -->
 
 
 			</div><!--/.main -->
