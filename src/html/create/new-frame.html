@@ -91,13 +91,17 @@
 			</div><!--/.sidebar -->
 			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">				
 				<h1 class="page-header">框架定制</h1>
+				<div class="btn-group btn-groupb-orientation" role="group">
+					<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-phone"></span></button>
+					<button type="button" class="btn btn-default btn-phone-landscape"><span class="glyphicon glyphicon-phone"></span></button>
+				</div>
 
 				<!-- row(框架定制表单) -->
-				<div class="row">
+				<div class="row custom-drag-wrapper">
 					<div class="col-md-8 page-preview-box">
 						<!-- 框架编辑体 -->
 						<div class="ppb-content">
-							<p class="page-preview-box-tips">从右侧拖拽模块</p>
+							<p class="page-preview-box-tips">请把模块拖到这里来 ^o^</p>
 							<ul class="list-group list-drag-drop-group interactive-drag-drop-group">
 							</ul>
 						</div>
@@ -256,6 +260,7 @@
 			$("ul.list-drag-drop-group").sortable({
 				group: 'no-drop',
 				handle: 'li.list-group-item',
+				itemSelector: 'li.list-group-item',
 				onDragStart: function ($item, container, _super) {
 					// Duplicate items of the no drop area
 					if(!container.options.drop)
@@ -292,6 +297,18 @@
 				$(this).parents("li.list-group-item").remove();
 			});
 
+			// Toggle 横坚屏
+			$(".btn-groupb-orientation .btn").on("click",function(){
+				var _self = $(this);
+				_self.siblings().removeClass("btn-primary").addClass("btn-default");
+				_self.removeClass("btn-default").addClass("btn-primary");
+
+				if(_self.hasClass("btn-phone-landscape")){
+					$("div.custom-drag-wrapper").addClass(" row-landscape")
+				}else{
+					$("div.custom-drag-wrapper").removeClass("row-landscape")
+				}
+			})
 		})()
 	</script>
 </body>

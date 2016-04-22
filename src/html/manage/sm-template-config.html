@@ -110,21 +110,19 @@
 							<li role="presentation"><a href="sm-template-add.html">布局选择</a></li>
 							<li role="presentation" class="active"><a href="sm-template-config.html">内容配置</a></li>
 						</ul>
+						
+						<div class="btn-group btn-groupb-orientation" role="group">
+							<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-phone"></span></button>
+							<button type="button" class="btn btn-default btn-phone-landscape"><span class="glyphicon glyphicon-phone"></span></button>
+						</div>
 
 						<!-- row(框架定制表单) -->
-						<div class="row">
+						<div class="row custom-drag-wrapper">
 							<div class="col-md-8 page-preview-box">
 								<!-- 框架编辑体 -->
 								<div class="ppb-content">
-									<p class="page-preview-box-tips">从右侧拖拽模块</p>
+									<p class="page-preview-box-tips">请把模块拖到这里来 ^o^</p>
 									<ul class="list-group list-drag-drop-group interactive-drag-drop-group">
-										<!-- <li class="list-group-item">
-											<button type="button" class="close btn-remove-module-object"><span aria-hidden="true">&times;</span></button>
-											<a href="javascript:;" class="text-center">
-												<img src="http://dummyimage.com/150x100/222/fff.png&text=%3Cimg%3E" alt="..." class="img-rounded">
-												<label>模块名称</label>
-											</a>
-										</li> -->
 									</ul>
 								</div>
 							</div>
@@ -281,9 +279,9 @@
 	<script>
 		var mochaUI = {
 			navigation : '<header class="mocha-nav mocha-navigation-scheme1 mocha-nav-skin1"><div class="mocha-nav-cover"></div><a href="javascript:;" class="mocha-nav-logo"><img src="http://dummyimage.com/40x40/000/fff" alt="游戏名字"><div class="mocha-nav-logo-desc"><h1>我叫MT2</h1><h2>焕新一代3D手游</h2></div></a><a href="javascript:;" class="mocha-nav-btn">关注</a></header>',
-			title : '<div class="mocha-title mocha-title-skin2"><h3 class="mocha-title-txt">标题文字</h3><div class="mocha-title-extra"><a href="#">链接1</a><a href="#">链接2</a></div></div>',
+			title : '<div class="mocha-title mocha-title-skin2"><h3 class="mocha-title-txt">标题文字11</h3><div class="mocha-title-extra"><a href="#">链接1</a><a href="#">链接2</a></div></div>',
 			button : '<a href="javascript:;" class="mocha-button mocha-button-scheme1 mocha-button-skin1">主按钮</a>',
-			txtlist : '<div class="mocha-txt-list mocha-txt-list-scheme2 mocha-txt-list-skin1"><ul class="mocha-txt-list-ul"><li class="mocha-tlu-item"><cite class="mocha-tlu-item-icon style1">公告</cite><h4 class="mocha-tlu-item-title"><a href="#">11月新八本本爆料：木桩世界BOSS</a></h4><p class="mocha-tlu-item-meta"><em>我叫MT运营团队</em><time>11/03</time></p></li></ul></div>'	,	
+			txtlist : '<div class="mocha-txt-list mocha-txt-list-scheme2 mocha-txt-list-skin1"><ul class="mocha-txt-list-ul"><li class="mocha-tlu-item"><cite class="mocha-tlu-item-icon style1">公告</cite><h4 class="mocha-tlu-item-title"><a href="#">11月新八本本爆料：木桩世界BOSS</a></h4><p class="mocha-tlu-item-meta"><em>我叫MT运营团队</em><time>11/03</time></p></li></ul></div>',	
 			piclist : '<div class="mocha-pic-list mocha-pic-list-scheme2"><ul class="mocha-pic-list-ul"><li class="mocha-pic-list-item"><a href="#"><img width="100%" src="http://dummyimage.com/400x400/222/fff.png&amp;text=&lt;img&gt;" alt="" class="pic"></a></li><li class="mocha-pic-list-item"><a href="#"><img width="100%" src="http://dummyimage.com/400x400/222/fff.png&amp;text=&lt;img&gt;" alt="" class="pic"></a></li></ul></div>'
 		};
 
@@ -292,21 +290,23 @@
 			$("ul.list-drag-drop-group").sortable({
 				group: 'no-drop',
 				handle: 'li.list-group-item',
+				itemSelector: 'li.list-group-item',
 				onDragStart: function ($item, container, _super) {
 					// Duplicate items of the no drop area
 					if(!container.options.drop)
 					$item.clone().insertAfter($item);
 					_super($item, container);
-
 					
 					var d = $item.find("button.btn-remove-module-object")[0],
 						m = $item.find("div.mocha-wrapper")[0];
 						h = $item.find("label").attr("rel") || "title";
 					if(!d){ 
+						console.log('add close button')
 						var closeBtnHTML = '<button type="button" class="close btn-remove-module-object"><span aria-hidden="true">&times;</span></button>';
 						$item.prepend(closeBtnHTML);
 					}
 					if(!m){
+						console.log('add mocha-wrapper')
 						var moduleHTML = $('<div class="mocha-wrapper"></div>')
 						moduleHTML = moduleHTML.append(mochaUI[h]);
 						$item.append(moduleHTML);
@@ -328,6 +328,17 @@
 				$(this).parents("li.list-group-item").remove();
 			});
 
+			// Toggle 横坚屏
+			$(".btn-groupb-orientation .btn").on("click",function(){
+				var _self = $(this);
+				_self.siblings().removeClass("btn-primary").addClass("btn-default");
+				_self.removeClass("btn-default").addClass("btn-primary");
+				if(_self.hasClass("btn-phone-landscape")){
+					$("div.custom-drag-wrapper").addClass(" row-landscape")
+				}else{
+					$("div.custom-drag-wrapper").removeClass("row-landscape")
+				}
+			})
 		})()
 	</script>
 

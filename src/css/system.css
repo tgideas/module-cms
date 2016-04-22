@@ -109,10 +109,16 @@ body {
   display: inline-block;
   border-radius: 50%;
 }
+.btn-phone-landscape .glyphicon-phone{
+  transform: rotate(-90deg);
+  -webkit-transform:rotate(-90deg);
+  -o-transform:rotate(-90deg);
+}
 
 /* list
 ---------------------------------- */
 .list-filter-form{padding:7px 0;}
+
 
 /* manage
 ---------------------------------- */
@@ -127,7 +133,7 @@ body {
 .list-group .list-group-item.dragged{position: absolute;}
 .list-drag-group button.close{display: none;}
 .form-horizontal .nav-tabs{margin-bottom:20px;}
-.interactive-drag-drop-group{box-shadow:none;}
+.interactive-drag-drop-group{position: relative;z-index:2;box-shadow:none;}
 .interactive-drag-drop-group .list-group-item{position: relative;color: #8A6D3E;background-color: #fcf8e3;}
 .interactive-drag-drop-group .list-group-item{padding:0;background:none;border:none;}
 .interactive-drag-drop-group .list-group-item img.img-rounded{display: none;}
@@ -149,6 +155,11 @@ body {
 .page-preview-box-tips{position: absolute;width:76%;top:40%;font-size:2em;color: #ccc;text-align: center;}
 .page-preview-box .panel-module-config{position: absolute;left:510px;top:260px;width:540px;}
 .page-preview-box .panel-module-config .panel-body{overflow: hidden;overflow-y:auto;max-height:580px;}
+/* 横屏模式 */
+.row-landscape .page-preview-box{width:970px;padding:60px 106px 58px 152px;background:url(/images/iphone6-mockup2.png);}
+.row-landscape .page-preview-box .ppb-content{width:667px;height:375px;}
+
+
 
 .mocha-wrapper{border:2px solid #f1f1f1;}
 .mocha-wrapper.current{box-sizing:border-box;border:2px solid #0066cc;}
