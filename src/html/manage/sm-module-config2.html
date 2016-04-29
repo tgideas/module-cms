@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>模块管理 - Tgideas 模块化系统</title>
+	<link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/bootstrap/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="/css/system.css">
+</head>
+<body>
+	<!-- navbar -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">模块化系统</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="/html/">首页</a></li>
+					<li><a href="/html/list/">专题列表</a></li>
+					<li><a href="/html/user">个人中心</a></li>
+					<li class="active"><a href="/html/manage">系统管理</a></li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li><button type="button" class="btn btn-warning navbar-btn" onclick="window.location.href='/html/create/new-init.html'">新建专题</button></li>
+					<!-- 未登录时显示 -->
+					<!--<li><a href="#">请先登录</a></li>-->
+					<!-- 登录后显示 -->
+					
+					<li role="presentation" class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							欢迎你，sonichuang<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="">个人中心</a></li>
+							<li><a href="">菜单项一</a></li>
+							<li><a href="">菜单项二</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="">退出</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</nav><!--/.navbar -->
+	
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3 col-md-2 sidebar">
+				<ul class="nav nav-sidebar">
+					<li class="active"><a href="sm-module.html">模块管理</a></li>
+					<li><a href="sm-layout.html">布局管理</a></li>
+					<li><a href="sm-skin.html">皮肤管理</a></li>
+					<li><a href="sm-size.html">尺寸管理</a></li>
+					<li><a href="sm-tag.html">标签管理</a></li>
+					<li><a href="sm-template.html">模板管理</a></li>
+				</ul>
+			</div><!--/.sidebar -->
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+				
+				<div class="row">
+					<form class="form-horizontal">
+						<div class="form-group">
+							<label for="moduleName" class="col-sm-1 control-label">模块名称</label>
+							<div class="col-sm-4">
+								<input type="email" class="form-control" id="moduleName" placeholder="模块名称">
+							</div>
+							<label for="moduleCategory" class="col-sm-1 control-label">模块分类</label>
+							<div class="col-sm-4">
+								<select id="modulecategoryCategory" name="" class="form-control">
+									<option value="" selected="selected">请选择模块分类</option>
+									<option value="">通用模块</option>
+									<option value="">抽奖模块</option>
+									<option value="">图文模块</option>
+								</select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="modulePic" class="col-sm-1 control-label">模块图片</label>
+							<div class="col-sm-4">
+								<input type="file" class="form-control" id="modulePic" placeholder="jane.doe@example.com">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="moduleTag" class="col-sm-1 control-label">模块标签</label>
+							<div class="col-sm-6">
+								<label class="checkbox-inline"><input type="checkbox" id="moduleTag1" value="option1"> 微官网</label>
+								<label class="checkbox-inline"><input type="checkbox" id="moduleTag2" value="option2"> 双端官网</label>
+								<label class="checkbox-inline"><input type="checkbox" id="moduleTag3" value="option3"> 运营专题</label>
+							</div>
+						</div>
+
+						<!-- 界面、内容、代码 选项卡 -->
+						<ul class="nav nav-tabs">
+							<li role="presentation"><a href="sm-module-add.html">界面定制</a></li>
+							<li role="presentation" class="active"><a href="sm-module-config.html">内容配置</a></li>
+							<li role="presentation"><a href="sm-module-code.html">代码上传</a></li>
+						</ul>
+						
+						<div class="form-group module-config">
+							<!-- 配置最终呈现 -->
+							<div class="col-md-8 module-config-box">
+								<h3>配置最终呈现</h3>
+								<ul class="list-group">
+									<!-- 样式输入框 -->
+									<li class="form-group list-group-item">
+										<label for="" class="control-label col-sm-4">样式选择</label>
+										<div class="col-sm-8">
+											<select id="inputStyleSelect1" name="" class="form-control">
+												<option value="1">一行1个</option>
+												<option value="2">一行2个</option>
+											</select>
+										</div>
+									</li>
+									<!-- 文本输入框 -->
+									<li class="form-group list-group-item">
+										<label id="labelText1" for="" class="control-label col-sm-4">领取按钮名称输入</label>
+										<div class="col-sm-8">
+											<input type="text" class="form-control">
+										</div>
+									</li>
+									<!-- 时间输入框 -->
+									<li class="form-group list-group-item">
+										<label id="labelDateTime1" for="" class="control-label col-sm-4">倒计时开始时间</label>
+										<div class="col-sm-8">
+											<input type="datetime-local" class="form-control">
+										</div>
+									</li>
+									<!-- 图片上传 -->
+									<li class="form-group list-group-item">
+										<label id="labelImageUpload1" for="" class="control-label col-sm-4">领取按钮背景图片上传</label>
+										<div class="col-sm-8">
+											<input type="file" class="form-control">
+										</div>
+									</li>
+									<!-- 富文本编辑器 -->
+									<li class="form-group list-group-item">
+										<label id="labelRichTextEditor1" for="" class="control-label col-sm-4">说明列表输入</label>
+										<div class="col-sm-8">
+											<textarea id="" name="" rows="4" class="form-control"></textarea>
+										</div>
+									</li>
+									<!-- 可选内容 -->
+									<li class="form-group list-group-item">
+										<label id="labelOptionalContent1" for="" class="control-label col-sm-4">是否需要标签</label>
+										<div class="col-sm-8">
+											<select id="" name="" class="form-control">
+												<option value="" selected="selected">请选择</option>
+												<option value="">是</option>
+												<option value="">否</option>
+											</select>
+										</div>
+										<label id="labelOptionalContent1Tag1" for="" class="control-label col-sm-4">标签输入</label>
+										<div class="col-sm-8"><input type="text" class="form-control" value="标签输入呀呀呀"></div>
+									</li>
+									<!-- 表格 -->
+									<li class="form-group list-group-item">
+										<label id="labelTable1" for="" class="control-label col-sm-4">活动奖励</label>
+										<div class="col-sm-8">
+											<div class="col-sm-6">
+												<label for="" class="control-label">表格行</label>
+												<input type="number" class="form-control">
+											</div>
+											<div class="col-sm-6">
+												<label for="" class="control-label">表格列</label>
+												<input type="number" class="form-control">
+											</div>
+										</div>
+									</li>
+									<!-- 选择框 -->
+									<li class="form-group list-group-item">
+										<label id="labelSelectBox1" for="" class="control-label col-sm-4">选择菜单数</label>
+										<div class="col-sm-8">
+											<!-- <input type="number" class="form-control select-config-handle" > -->
+											<select id="inputStyleSelect1" name="" class="form-control select-config-handle">
+												<option value="1" selected>1</option>
+												<option value="2">2</option>
+												<option value="3">3</option>
+												<option value="4">4</option>
+												<option value="5">5</option>
+												<option value="6">6</option>
+												<option value="7">7</option>
+												<option value="8">8</option>
+												<option value="9">9</option>
+												<option value="10">10</option>
+											</select>
+										</div>
+										<div id="selectConfigGroup" class="select-config-group">
+											<label for="" class="control-label col-sm-4">菜单1名称</label>
+											<div class="col-sm-8"><input type="text" class="form-control" value="标签输入"></div>
+										</div>
+									</li>
+
+									<!-- 循环体 -->
+									<li class="form-group list-group-item list-group-loops">
+										<label id="labelLoopContent1" for="" class="control-label col-sm-4">循环体名称</label>
+										<div class="col-sm-8">
+											<input type="number" class="form-control loop-content-config-handle">
+										</div>
+										<div class="clearfix"></div>
+										<div class="list-group-loop-content-box">
+											
+										</div>
+									</li>
+									<!-- 附加容器 -->
+									<li class="form-group list-group-item">
+										<label id="labelAdditionBox1" for="" class="control-label col-sm-4">附加容器</label>
+										<div class="col-sm-8">
+											
+										</div>
+									</li>
+								</ul>
+							</div>
+							<!-- 配置显示 -->
+							<div class="col-md-6 module-config-group">
+								<h3>配置显示</h3>
+								<form class="form-horizontal" action="">
+									<fieldset>
+										<legend>样式选择</legend>
+										<ul class="list-group">
+											<li class="form-group list-group-item">
+												<label for="" class="control-label col-sm-4">样式数量输入</label>
+												<div class="col-sm-8">
+													<!-- <input type="text" class="form-control"> -->
+													<select name="formStyleSelect" class="form-control">
+														<option value="0" selected="selected">请选择</option>
+														<option value="1">1</option>
+														<option value="2">2</option>
+														<option value="3">3</option>
+														<option value="4">4</option>
+														<option value="5">5</option>
+														<option value="6">6</option>
+														<option value="7">7</option>
+														<option value="8">8</option>
+														<option value="9">9</option>
+													</select>
+												</div>
+											</li>
+										</ul>
+										<ul rel="#inputStyleSelect1" class="list-group style-config-group">
+											<li class="form-group list-group-item">
+												<label for="" class="control-label col-sm-4">样式1名称输入</label>
+												<div class="col-sm-4"><input type="text" class="form-control" value="一行1个"></div>
+												<div class="col-sm-4"><input type="text" class="form-control" value="" placeholder="对应类名"></div>
+											</li>
+											<li class="form-group list-group-item">
+												<label for="" class="control-label col-sm-4">样式2名称输入</label>
+												<div class="col-sm-4"><input type="text" class="form-control" value="一行2个"></div>
+												<div class="col-sm-4"><input type="text" class="form-control" value="" placeholder="对应类名"></div>
+											</li>
+										</ul>
+									</fieldset>
+									<fieldset>
+										<legend>文本输入框</legend>
+										<ul class="list-group">
+											<li class="form-group list-group-item">
+												<label for="" class="control-label col-sm-4">文本名称输入</label>
+												<div class="col-sm-8"><input rel="#labelText1" type="text" class="form-control" value="领取按钮名称输入"></div>
+											</li>
+										</ul>
+									</fieldset>
+									<fieldset>
+										<legend>时间输入框</legend>
+										<ul class="list-group">
+											<li class="form-group list-group-item">
+												<label for="" class="control-label col-sm-4">时间名称输入</label>
+												<div class="col-sm-8"><input rel="#labelDateTime1" type="text" class="form-control" value="倒计时开始时间"></div>
+											</li>
+										</ul>
+									</fieldset>
+									<fieldset>
+										<legend>图片上传</legend>
+										<ul class="list-group">
+											<li class="form-group list-group-item">
+												<label for="" class="control-label col-sm-4">图片上传名称输入</label>
+												<div class="col-sm-8"><input rel="#labelImageUpload1" type="text" class="form-control" value="领取按钮背景图片上传"></div>
+											</li>
+										</ul>
+									</fieldset>
+									<fieldset>
+										<legend>富文本编辑器</legend>
+										<ul class="list-group">
+											<li class="form-group list-group-item">
+												<label for="" class="control-label col-sm-4">富文本名称输入</label>
+												<div class="col-sm-8"><input rel="#labelRichTextEditor1" type="text" class="form-control" value="说明列表输入"></div>
+											</li>
+										</ul>
+									</fieldset>
+									<fieldset>
+										<legend>可选内容</legend>
+										<ul class="list-group">
+											<li class="form-group list-group-item">
+												<label for="" class="control-label col-sm-4">可选内容名称数入</label>
+												<div class="col-sm-8"><input rel="#labelOptionalContent1" type="text" class="form-control" value="是否需要标签"></div>
+											</li>
+											<li class="form-group list-group-item">
+												<label for="" class="control-label col-sm-4">默认选项</label>
+												<div class="col-sm-8">
+													<select id="" name="" class="form-control">
+														<option value="" selected="selected">请选择</option>
+														<option value="">是</option>
+														<option value="">否</option>
+													</select>
+												</div>
+											</li>
+											<li class="form-group list-group-item">
+												<label for="" class="control-label col-sm-4">输入框名称输入</label>
+												<div class="col-sm-8"><input rel="#labelOptionalContent1Tag1" type="text" class="form-control" value="标签输入"></div>
+											</li>
+										</ul>
+									</fieldset>
+									<fieldset>
+										<legend>表格编辑器</legend>
+										<ul class="list-group">
+											<li class="form-group list-group-item">
+												<label for="" class="control-label col-sm-4">表格名称输入</label>
+												<div class="col-sm-8"><input rel="#labelTable1" type="text" class="form-control" value="活动奖励"></div>
+											</li>
+											<!--
+											<li class="form-group list-group-item">
+												<label for="" class="control-label col-sm-4">表格行输入</label>
+												<div class="col-sm-8"><input type="number" class="form-control" value="5"></div>
+											</li>
+											<li class="form-group list-group-item">
+												<label for="" class="control-label col-sm-4">表格列输入</label>
+												<div class="col-sm-8"><input type="number" class="form-control" value="3"></div>
+											</li>-->
+										</ul>
+									</fieldset>
+									<fieldset>
+										<legend>选择框</legend>
+										<ul class="list-group select-config-group">
+											<li class="form-group list-group-item">
+												<label for="" class="control-label col-sm-4">选择框名称输入</label>
+												<div class="col-sm-8"><input rel="#labelSelectBox1" type="text" class="form-control" value="选择菜单数"></div>
+											</li>
+											<li class="form-group list-group-item">
+												<label for="" class="control-label col-sm-4">选择框数量</label>
+												<div class="col-sm-8">
+													<select rel="#" id="" name="" class="form-control">
+														<option value="0" selected="selected">请选择数量</option>
+														<option value="1">1</option>
+														<option value="2">2</option>
+														<option value="3">3</option>
+														<option value="4">4</option>
+														<option value="5">5</option>
+														<option value="6">6</option>
+														<option value="7">7</option>
+														<option value="8">8</option>
+														<option value="9">9</option>
+														<option value="10">10</option>
+													</select>
+												</div>
+											</li>
+										</ul>
+									</fieldset>
+
+									<fieldset>
+										<legend>循环体</legend>
+										<ul class="list-group">
+											<li class="form-group list-group-item">
+												<label for="" class="control-label col-sm-4">循环体名称输入</label>
+												<div class="col-sm-8"><input rel="#labelLoopContent1" type="text" class="form-control" value="循环体名称"></div>
+											</li>
+											<li class="form-group list-group-item">
+												<div class="col-md-offset-4 col-sm-8">
+													<button id="btnAddLoopContent1" type="button" onclick="BootstrapDialog.show(dialogAddLoopContent);" title="" class="btn btn-info">+新增内容</button>
+												</div>
+											</li>
+										</ul>
+										<ul class="list-group loop-content-group">
+										</ul>
+									</fieldset>
+									
+									<fieldset>
+										<legend>附加容器</legend>
+										<ul class="list-group">
+											<li class="form-group list-group-item disabled">
+												无需配置
+											</li>
+										</ul>
+									</fieldset>
+								</form>
+						</div>
+
+						<div class="form-group">
+							<div class="col-sm-10 text-center">
+								<button type="button" class="btn btn-lg btn-success" onclick="window.location.href='sm-module-code.html'">下一步</button>
+							</div>
+						</div>
+					</form>	
+				</div>
+
+			</div><!--/.main -->
+		</div><!--/.row -->
+	</div><!--/.container-fluid -->
+
+
+
+
+
+	<script src="http://game.gtimg.cn/images/js/jquery/jquery-1.9.1.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<!-- 
+		* bootstrap-dilog
+		* docs: https://nakupanda.github.io/bootstrap3-dialog/
+	-->
+	<link rel="stylesheet" href="/css/bootstrap/bootstrap-dialog.min.css">
+	<script src="/js/bootstrap-dialog.min.js"></script>
+	<script>
+		var $dialogContent = $('<form class="form-horizontal"><ul class="list-group"></ul></form>');
+		    $dialogContent.append('<li class="form-group list-group-item"><label for="" class="control-label col-sm-3">内容类型</label><div class="col-sm-8"><select id="loopContentDialogTypes" class="form-control"><option value="text" selected="selected">文本</option><option value="link">链接</option><option value="img">图片</option><option value="video">视频</option><option value="p">段落</option><option value="custom">自定义</option></select></div></li>');
+		    $dialogContent.append('<li class="form-group list-group-item"><label for="" class="control-label col-sm-3">内容名称</label><div class="col-sm-8"><input id="loopContentDialogName" type="text" class="form-control" value=""></div></li>');
+	   	var dialogAddLoopContent = {
+	        title: '新建循环体内容',
+	        message: $dialogContent,
+	        buttons: [
+	        {
+	            label: '确定',
+	            cssClass: 'btn-warning',
+	            action: function(dialogRef){
+	                var loopType = $("#loopContentDialogTypes").val(),
+	                	loopName = $("#loopContentDialogName").val();
+	                // console.log(loopType + " " + loopName);
+	                dialogLoopContentAppend(loopType,loopName);
+	                dialogRef.close();
+	            }
+	        },
+	        {
+	            label: '关闭',
+	            action: function(dialogRef){
+	                dialogRef.close();
+	            }
+	        }]
+	    };
+	    var dialogLoopContentAppend = function(loopType,loopName){
+	    	var loopType = loopType || text,
+	    		loopName = loopName || "文本输入",
+	    		loopTypeHTML = "";
+	    	switch (loopType){
+	    		case "text" :
+	    			loopTypeHTML = '<input type="text" class="form-control" value="文本输入"></div>';
+	    			break;
+	    		case "link" :
+					loopTypeHTML = '<input type="text" class="form-control" value="连接输入"></div>';
+					break;
+				case "img" :
+					loopTypeHTML = '<input type="text" class="form-control" value="图片地址"></div>';
+					break;
+				case "video" :
+					loopTypeHTML = '<input type="text" class="form-control" value="视频VID"></div>';
+					break;
+				case "p" :
+					loopTypeHTML = '<textarea rows="4" class="form-control">段落内容</textarea>';
+					break;
+				case "custom" :
+					loopTypeHTML = '<textarea rows="4" class="form-control">自定义代码</textarea>';
+					break;
+	    	}
+	    	var appendHTML ='<li class="form-group list-group-item">'
+	    		appendHTML+='<label for="" class="control-label col-sm-4">'+loopName+'</label>'
+	    		appendHTML+='<div class="col-sm-7">'+loopTypeHTML+'</div>'
+				appendHTML+='<div class="col-sm-0"><button type="button" class="close btn-remove-loop-content" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>'
+				appendHTML+='</li>'
+			$("ul.loop-content-group").append(appendHTML);
+	    }
+
+	    // BootstrapDialog.show(dialogSet);
+	</script>
+
+	<script type="text/javascript">
+		(function(){
+			// 配置文本修改直接显示到『最终呈现』
+			$("input[type='text']").on("input propertychange",function(){
+				var _self = $(this),
+					_selfAttr = _self.attr("rel");
+				if(_selfAttr){
+					$(_selfAttr).html(_self.val());
+				}
+			});
+
+			// 样式选择，下接菜单事件绑定
+			$("select[name='formStyleSelect']").on("change",function(){
+				var _self = $(this),
+					_selfVal = _self.val(),
+					styleSelectHTML = "";
+				if (!_selfVal) return
+				for(i=0; i<_selfVal; i++){
+					styleSelectHTML += '<li class="form-group list-group-item">';
+					styleSelectHTML += '<label class="control-label col-sm-4">样式'+(i+1)+'名称输入</label>';
+					styleSelectHTML += '<div class="col-sm-4"><input type="text" class="form-control module-scheme-name" value="样式'+(i+1)+'"></div>';
+					styleSelectHTML += '<div class="col-sm-4"><input type="text" class="form-control module-scheme-class" value="" placeholder="对应类名"></div>';
+					styleSelectHTML += '</li>';
+				}
+				_self.parents("ul.list-group").siblings("ul.style-config-group").html(styleSelectHTML);
+				$("ul.style-config-group input").eq(0).trigger("input")
+			});
+
+			// 样式名称输入，同步到『最终呈现』
+			$("ul.style-config-group").on("input propertychange","input",function(){
+				var _self = $(this),
+					_selfAttr = _self.parents("ul.style-config-group").attr("rel"),
+					selectValHTML = "";
+				if(!_selfAttr) return
+				$("ul.style-config-group input.module-scheme-name").each(function(i){
+					var n = $(this).val()
+					var v = $(this).parents(".list-group-item").find("input.module-scheme-class").val();
+					selectValHTML+= '<option value="'+v+'">'+n+'</option>';
+				})
+				// console.log(selectValHTML);
+				$(_selfAttr).html(selectValHTML)
+			});
+
+			//选择菜单数修改后，自动在『最终呈现』里显示
+			$("div.module-config-box").on("input propertychange",".select-config-handle",function(){
+				var _self = $(this),
+					_selfVal = parseInt(_self.val()),
+					selectValHTML = "";
+				if( _selfVal>10 ) return
+				for(i=0; i<_selfVal; i++){
+					selectValHTML+= '<label for="" class="control-label col-sm-4">菜单'+(i+1)+'名称</label>';
+					selectValHTML+= '<div class="col-sm-8"><input type="text" class="form-control" value="标签输入"></div>';
+				}
+				_self.parents("li.list-group-item").find("div.select-config-group").html(selectValHTML);
+			});
+
+			// 循环体事件绑定
+			$("div.module-config-box").on("input propertychange",".loop-content-config-handle",function(){
+				var _self = $(this),
+					_selfVal = parseInt(_self.val()),
+					loopContentHTML = "";
+				if( _selfVal>10 ) return
+				for(i=0; i<_selfVal; i++){
+					loopContentHTML+= '<ul class="list-group">'
+					loopContentHTML+= '<li class="form-group list-group-item"><span class="label label-info">第'+(i+1)+'次循环</span></li>'
+					loopContentHTML+= $("ul.loop-content-group").html()
+					loopContentHTML+= '</ul>'
+				}
+				_self.parents("li.list-group-item").find(".list-group-loop-content-box").html(loopContentHTML);
+			});
+
+			// 删除按钮
+			$("ul.loop-content-group").on("click","button.btn-remove-loop-content",function(){
+				var r=confirm("是否确认删除本内容")
+				if(r){
+					// console.log("del")
+					$(this).parents("li.list-group-item").remove();
+				}
+				return false;
+			});
+
+
+
+		})()
+	</script>
+</body>
+</html>

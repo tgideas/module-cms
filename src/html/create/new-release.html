@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>框架定制 - Tgideas 模块化系统</title>
+	<link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+	<link href="http://game.gtimg.cn/images/js/mocha/mocha-1.1.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="/css/bootstrap/bootstrap-theme.min.css">
+	<link rel="stylesheet" href="/css/system.css">
+	<style>
+		body{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;}
+		h4{font-size:18px;}
+		
+		html{font-size:100px;}
+		body{font-size:0.14rem;}
+	</style>
+</head>
+<body>
+	<!-- navbar -->
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">模块化系统</a>
+			</div>
+			<div id="navbar" class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li><a href="/html/">首页</a></li>
+					<li><a href="/html/list/">专题列表</a></li>
+					<li><a href="/html/user">个人中心</a></li>
+					<li><a href="/html/manage">系统管理</a></li>
+				</ul>
+
+				<ul class="nav navbar-nav navbar-right">
+					<li><button type="button" class="btn btn-warning navbar-btn" onclick="window.location.href='/html/create/new-init.html'">新建专题</button></li>
+					<!-- 未登录时显示 -->
+					<!--<li><a href="#">请先登录</a></li>-->
+					<!-- 登录后显示 -->
+					
+					<li role="presentation" class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+							欢迎你，sonichuang<span class="caret"></span>
+						</a>
+						<ul class="dropdown-menu">
+							<li><a href="">个人中心</a></li>
+							<li><a href="">菜单项一</a></li>
+							<li><a href="">菜单项二</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="">退出</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div><!--/.nav-collapse -->
+		</div>
+	</nav><!--/.navbar -->
+	
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3 col-md-2 sidebar">
+				<ul class="nav nav-sidebar">
+					<li><a href="new-init.html">专题属性</a></li>
+					<li>
+						<a href="new-pages.html">页面管理</a>
+						<ul class="nav nav-sidebar-sub">
+							<li role="presentation" class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+									专题首页 <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									<li><a href="#">专题首页</a></li>
+									<li><a href="#">活动说明页</a></li>
+									<li><a href="#">活动奖品页</a></li>
+									<li><a href="#">中奖公示页</a></li>
+								</ul>
+							</li>
+							<li><a href="new-layout.html">布局选择</a></li>
+							<li><a href="new-frame.html">交互配置</a></li>
+							<li><a href="new-module.html">内容配置</a></li>
+							<li><a href="new-config.html">页面配置</a></li>
+							<li><a href="new-preview.html">预览提交</a></li>
+						</ul>
+					</li>
+					<li class="active"><a href="new-release.html">预览发布</a></li>
+				</ul>
+			</div><!--/.sidebar -->
+			<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">				
+				<h1 class="page-header">框架定制</h1>
+				<div class="btn-group btn-groupb-orientation" role="group">
+					<button type="button" class="btn btn-primary"><span class="glyphicon glyphicon-phone"></span></button>
+					<button type="button" class="btn btn-default btn-phone-landscape"><span class="glyphicon glyphicon-phone"></span></button>
+				</div>
+
+				<!-- row(框架定制表单) -->
+				<div class="row custom-drag-wrapper">
+					<div class="col-md-8 page-preview-box">
+						<!-- 框架编辑体 -->
+						<div class="ppb-content">
+							<!-- <p class="page-preview-box-tips">请把模块拖到这里来 ^o^</p> -->
+							<ul class="list-group list-drag-drop-group interactive-drag-drop-group">
+							
+									<header class="mocha-nav mocha-navigation-scheme1 mocha-nav-skin1"><div class="mocha-nav-cover"></div><a href="javascript:;" class="mocha-nav-logo"><img src="http://dummyimage.com/40x40/000/fff" alt="游戏名字"><div class="mocha-nav-logo-desc"><h1>我叫MT2</h1><h2>焕新一代3D手游</h2></div></a><a href="javascript:;" class="mocha-nav-btn">关注</a></header>
+									<div class="mocha-title mocha-title-skin2"><h3 class="mocha-title-txt">标题文字</h3><div class="mocha-title-extra"><a href="#">链接1</a><a href="#">链接2</a></div></div>
+									<a href="javascript:;" class="mocha-button mocha-button-scheme1 mocha-button-skin1">主按钮</a>
+									<div class="mocha-txt-list mocha-txt-list-scheme2 mocha-txt-list-skin1"><ul class="mocha-txt-list-ul"><li class="mocha-tlu-item"><cite class="mocha-tlu-item-icon style1">公告</cite><h4 class="mocha-tlu-item-title"><a href="#">11月新八本本爆料：木桩世界BOSS</a></h4><p class="mocha-tlu-item-meta"><em>我叫MT运营团队</em><time>11/03</time></p></li></ul></div>
+									<div class="mocha-pic-list mocha-pic-list-scheme2"><ul class="mocha-pic-list-ul"><li class="mocha-pic-list-item"><a href="#"><img width="100%" src="http://dummyimage.com/400x400/222/fff.png&amp;text=&lt;img&gt;" alt="" class="pic"></a></li><li class="mocha-pic-list-item"><a href="#"><img width="100%" src="http://dummyimage.com/400x400/222/fff.png&amp;text=&lt;img&gt;" alt="" class="pic"></a></li></ul></div>
+
+							</ul>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<div class="thumbnail">
+								<!-- 点击二维码可在左侧中预浏览页面 -->
+								<a href="javascript:;"><img width="250" height="250" src="http://qr.api.cli.im/qr?data=www.qq.com&level=H&transparent=false&bgcolor=%23ffffff&forecolor=%23000000&blockpixel=12&marginblock=1&logourl=&size=280&kid=cliim&key=7e0f3bec1246f99f65e236212e6f4db1" alt=""></a>
+								<div class="caption text-center">
+									<h4>专题首页（带功能）</h4>
+									<p><button type="button" class="btn btn-success" onclick="">同步到蜘蛛</button> <button type="button" class="btn btn-danger" onclick="">打回修改</button></p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="thumbnail">
+								<!-- 点击二维码可在左侧中预浏览页面 -->
+								<a href="javascript:;"><img width="250" height="250" src="http://qr.api.cli.im/qr?data=www.qq.com&level=H&transparent=false&bgcolor=%23ffffff&forecolor=%23000000&blockpixel=12&marginblock=1&logourl=&size=280&kid=cliim&key=7e0f3bec1246f99f65e236212e6f4db1" alt=""></a>
+								<div class="caption text-center">
+									<h4>活动介绍</h4>
+									<p><button type="button" class="btn btn-success" onclick="">确认发布</button> <button type="button" class="btn btn-danger" onclick="">打回修改</button></p>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="thumbnail">
+								<!-- 点击二维码可在左侧中预浏览页面 -->
+								<a href="javascript:;"><img width="250" height="250" src="http://qr.api.cli.im/qr?data=www.qq.com&level=H&transparent=false&bgcolor=%23ffffff&forecolor=%23000000&blockpixel=12&marginblock=1&logourl=&size=280&kid=cliim&key=7e0f3bec1246f99f65e236212e6f4db1" alt=""></a>
+								<div class="caption text-center">
+									<h4>活动介绍</h4>
+									<p><button type="button" class="btn btn-success" onclick="">确认发布</button> <button type="button" class="btn btn-danger" onclick="">打回修改</button></p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="col-md-12 text-center">
+						<button type="button" class="btn btn-lg btn-success" onclick="">全部同步到蜘蛛</button>
+						<button type="button" class="btn btn-lg btn-success" onclick="">全部发布</button>
+						<button type="button" class="btn btn-lg btn-danger" onclick="">全部打回</button>
+					</div>
+				</div><!--/.row(框架定制表单) -->
+
+
+			</div><!--/.main -->
+		</div><!--/.row -->
+	</div><!--/.container-fluid -->
+
+	<script src="http://game.gtimg.cn/images/js/jquery/jquery-1.9.1.min.js"></script>
+	<script src="/js/bootstrap.min.js"></script>
+	<script>
+		(function(){
+			// Toggle 横坚屏
+			$(".btn-groupb-orientation .btn").on("click",function(){
+				var _self = $(this);
+				_self.siblings().removeClass("btn-primary").addClass("btn-default");
+				_self.removeClass("btn-default").addClass("btn-primary");
+
+				if(_self.hasClass("btn-phone-landscape")){
+					$("div.custom-drag-wrapper").addClass(" row-landscape")
+				}else{
+					$("div.custom-drag-wrapper").removeClass("row-landscape")
+				}
+			})
+		})()
+	</script>
+</body>
+</html>

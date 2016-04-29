@@ -79,14 +79,13 @@
 								</ul>
 							</li>
 							<li><a href="new-layout.html">布局选择</a></li>
-							<li><a href="new-frame.html">框架定制</a></li>
-							<li class="active"><a href="new-module.html">模块配置</a></li>
-							<li><a href="new-page.html">页面配置</a></li>
-							<li><a href="new-page.html">预览提交</a></li>
-							<li><a href="new-page.html">活动说明页</a></li>
+							<li><a href="new-frame.html">交互配置</a></li>
+							<li class="active"><a href="new-module.html">内容配置</a></li>
+							<li><a href="new-config.html">页面配置</a></li>
+							<li><a href="new-preview.html">预览提交</a></li>
 						</ul>
 					</li>
-					<li><a href="new-preview.html">预览发布</a></li>
+					<li><a href="new-release.html">预览发布</a></li>
 				</ul>
 			</div><!--/.sidebar -->
 			<div id="main" class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">				
@@ -222,11 +221,11 @@
 												<div class="col-sm-4">
 													<input type="number" class="form-control loop-content-config-handle">
 												</div>
-												<div class="col-sm-1"><button type="button" v-on:click="newLoopLink" class="btn btn-default loop-content-generate-btn">生成</button></div>
+												<div class="col-sm-1"><button type="button" v-on:click="newLoopContent" class="btn btn-default loop-content-generate-btn">生成</button></div>
 												<div class="clearfix"></div>
 												<div class="list-group-loop-content-box">
 													<ul class="list-group" v-for="item in loopLink">
-														<li class="form-group list-group-item"><button type="button" v-on:click="removeLoopLink($index)" class="close btn-remove-loop-content" aria-label="Close"><span aria-hidden="true">×</span></button><span class="label label-info">第 {{ $index +1 }} 个链接</span></li>
+														<li class="form-group list-group-item"><button type="button" v-on:click="removeLoopContent($index)" class="close btn-remove-loop-content" aria-label="Close"><span aria-hidden="true">×</span></button><span class="label label-info">第 {{ $index +1 }} 个链接</span></li>
 														<li class="form-group list-group-item"><label class="control-label col-sm-4">链接名称</label><div class="col-sm-7"><input type="text" class="form-control" v-model="item.text"></div></li>
 														<li class="form-group list-group-item"><label class="control-label col-sm-4">链接地址</label><div class="col-sm-7"><input type="text" class="form-control" v-model="item.url"></div></li>
 													</ul>
@@ -293,15 +292,17 @@
 							</div>
 							
 							<!--===【文字列表1】=====================================-->
-							<div class="mocha-wrapper">
+							<div id="mochaTxtlist1" class="mocha-wrapper">
 								<!-- 模块预览(文字列表模块) -->
-								<div class="mocha-txt-list mocha-txt-list-scheme2 mocha-txt-list-skin1">
+								<div class="mocha-txt-list mocha-txt-list-skin1" v-bind:class="skin">
 									<ul class="mocha-txt-list-ul">
-										<li class="mocha-tlu-item">
-											<cite class="mocha-tlu-item-icon style1">公告</cite>
-											<h4 class="mocha-tlu-item-title"><a href="javascript:;">11月新八本本爆料：木桩世界BOSS</a></h4>
-											<p class="mocha-tlu-item-meta"><em>我叫MT运营团队</em><time>11/03</time></p>
-										</li>
+										<template v-for="item in loopContent">
+											<li class="mocha-tlu-item">
+												<cite class="mocha-tlu-item-icon style1">{{item.category}}</cite>
+												<h4 class="mocha-tlu-item-title"><a href="javascript:;" url="{{item.url}}">{{item.title}}</a></h4>
+												<p class="mocha-tlu-item-meta"><em>{{item.meta}}</em><time>{{item.date}}</time></p>
+											</li>
+										</template>
 									</ul>
 								</div>
 								<!-- 模块配置(文字列表模块) -->
@@ -311,7 +312,36 @@
 										1. 样式选择下拉框
 									 -->
 									<div class="panel-body">
+										<ul class="list-group">
+											<li class="form-group list-group-item">
+												<label for="" class="control-label col-sm-4">样式选择</label>
+												<div class="col-sm-4">
+													<select v-model="skin" class="loop-content-config-handle">
+														<option value="mocha-txt-list-scheme1">显示类型图标</option>
+														<option value="mocha-txt-list-scheme2">不显示类型图标</option>
+														<option value="mocha-txt-list-scheme3">显示一行所有</option>
+													</select>
 
+												</div>
+											</li>
+											<li class="form-group list-group-item">
+												<label for="" class="control-label col-sm-4">列表个数</label>
+												<div class="col-sm-4">
+													<input type="number" class="form-control loop-content-config-handle">
+												</div>
+												<div class="col-sm-1"><button type="button" v-on:click="newLoopContent" class="btn btn-default loop-content-generate-btn">生成</button></div>
+												<div class="clearfix"></div>
+												<div class="list-group-loop-content-box">
+													<ul class="list-group" v-for="item in loopContent">
+														<li class="form-group list-group-item"><button type="button" v-on:click="removeLoopContent($index)" class="close btn-remove-loop-content" aria-label="Close"><span aria-hidden="true">×</span></button><span class="label label-info">第 {{ $index +1 }} 个链接</span></li>
+														<li class="form-group list-group-item"><label class="control-label col-sm-4">类型名称</label><div class="col-sm-7"><input type="text" class="form-control" v-model="item.category"></div></li>
+														<li class="form-group list-group-item"><label class="control-label col-sm-4">标题名称</label><div class="col-sm-7"><input type="text" class="form-control" v-model="item.title"></div></li>
+														<li class="form-group list-group-item"><label class="control-label col-sm-4">标题名称</label><div class="col-sm-7"><input type="text" class="form-control" v-model="item.url"></div></li>
+														<li class="form-group list-group-item"><label class="control-label col-sm-4">副标题名称</label><div class="col-sm-7"><input type="text" class="form-control" v-model="item.meta"></div></li>
+														<li class="form-group list-group-item"><label class="control-label col-sm-4">日期</label><div class="col-sm-7"><input type="text" class="form-control" v-model="item.date"></div></li>
+													</ul>
+												</div>
+											</li>
 									</div>
 								</div>
 							</div>
@@ -463,7 +493,7 @@
 			},
 			methods: {
 				// 标题连接的生成
-				newLoopLink: function(){
+				newLoopContent: function(){
 					// var n = 2;
 					var n = event.target.getAttribute("data-num");
 					if(!n || n>3) {
@@ -476,7 +506,7 @@
 					}
 				},
 				// 标题连接的删除
-				removeLoopLink: function(index){
+				removeLoopContent: function(index){
 					this.loopLink.splice(index, 1)
 				}
 			}
@@ -517,6 +547,42 @@
 				}
 			}
 		});
+
+		// 模块(文字列表)所见既所得(vue.js双向绑定)
+		var vueAsyncTxtlist1 = new Vue({
+			el: '#mochaTxtlist1',
+			data: {
+				// txtlist ----------
+				skin: 'mocha-txt-list-scheme2',
+				loopContent: [
+					{ category: '公告', title: '标题显示这里', url: 'www.qq.com', meta: '副标题显示这里', date: '11/03' }
+				]
+			},
+			methods: {
+				// 新一条循环内容生成
+				newLoopContent: function(){
+					// var n = 2;
+					var n = parseInt(event.target.getAttribute("data-num"));
+					// console.log(n)
+					if(!n || n>10) {
+						alert('不能超过10个')
+						return;
+					}
+					this.loopContent = [];
+					for(var i=0; i<n; i++){
+						this.loopContent.push({category: '分类', title: '标题', url: '#', meta: '副标题', date: '11/03'})
+					}
+					this.number = n;
+					// console.dir(this.loopContent)
+				},
+				// 循环内容的删除
+				removeLoopContent: function(index){
+					this.loopContent.splice(index, 1);
+					this.number -= 1;
+				}
+			}
+		});
+
 	</script>
 
 </body>
